@@ -32,7 +32,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = DEVELOPMENT
 
 ALLOWED_HOSTS = [os.environ.get('HOSTNAME'),
-                 '127.0.0.1', 'zzblog.herokuapp.com']
+                 '127.0.0.1', 'ztrif.herokuapp.com']
 
 
 # Application definition
@@ -62,7 +62,7 @@ ROOT_URLCONF = 'trif.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [mkdir('templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -94,7 +94,7 @@ else:
     DATABASES = {
     'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     } 
-`
+
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
 
@@ -113,8 +113,11 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'accounts.backends.CaseInsensitiveAuth']
 
-# Internationalization
+# Internationalisation
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
 LANGUAGE_CODE = 'en-uk'
@@ -134,7 +137,7 @@ AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl': 'max-age=94608000',
 }
 
-AWS_STORAGE_BUCKET_NAME = 'trif-storage'
+AWS_STORAGE_BUCKET_NAME = 'trif-store'
 AWS_S3_REGION_NAME = 'eu-west-1'
 AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
 AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
