@@ -10,7 +10,9 @@ The application must store an indeterminate number of images in non-volatile web
 
 It must provide methods to classify and filter these images based on various characteristics.
 
-In order to do this, it must store or be able to extract data about the functions used to generate an image.   This wioll be facilitated by these data being encoded in the filenames of the images.
+In order to do this, it must store or be able to extract data about the functions used to generate an image.   This will be facilitated by these data being encoded in the filenames of the images.
+
+The administrator must be able to add or delete images.
 
 Images must be stored in low resolution (877x620 pixels and 436x310 pixels) but the originals are 14032x9920 pixels, and it is these originals from which high-definition prints (A0, A1, A2, A3) will be made for purchasers.   The filenames of the originals have a one-to-one relationship to the filenames of the low-resolution versions, so orders can be processed without ambiguity.
 
@@ -30,14 +32,17 @@ The application must maintain a "shopping basket" or "cart" so that the user can
 
 A checkout and payment facility must be provided using a trusted third-party library compatible with Django.
 
-## Design
+## Design decisions
 
 - Deployment platform:      Heroku
 - Database:                 Postgresql as Heroku add-on
+- Image storage:            S3
 - Versions:                 Python(3.7.1), Django(2.1.7)
 - CI / testing:             Travis
 
 ### Models
+
+
 
 
 
