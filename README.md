@@ -32,6 +32,8 @@ The application must maintain a "shopping basket" or "cart" so that the user can
 
 A checkout and payment facility must be provided using a trusted third-party library compatible with Django.
 
+In order not to distract or detract from the images themselves, the layout and design of the rendered pages should be as clean and simple as possible.
+
 ## Design decisions
 
 - Deployment platform:      Heroku
@@ -39,11 +41,33 @@ A checkout and payment facility must be provided using a trusted third-party lib
 - Image storage:            S3
 - Versions:                 Python(3.7.1), Django(2.1.7)
 - CI / testing:             Travis
+- Payment processing:       Stripe
+- Styling:                  Materialize
+- Front-end logic           Vue, possibly... or not
 
 ### Models
 
+#### User
 
+- Represents a user, who can register with an email address and thereafter be authenticated;
+- Fields:  for each user we need name, email, id, whether registered and whether authenticated. We will need to link to the orders table with a foreign key.
 
+#### Image
 
+- Represents a fractal image that can be displayed, that can be ordered as a print, that contains information about the functions and parameters used to create it;
+- Fields: name, image_id.   We could pre-extract the creation data from the filenames and store as fields, but it will perhaps be simpler, and minimally expensive, to create functions to extract the data as needed. Each Image item must provide a method to get both small and large versions from storage. 
 
+#### Order
+
+- Represents an Order made by a User for an Image;
+- Fields: order_id, user_id (foreign key), order_details (containing despatch address, list of Image items and quantities, whether paid).    
+
+### Views and Templates
+
+- `base.html` will contain header and footer with links to register / login.   Other templates will inherit from this:
+- `index.html` will be a Home Page displaying some images with links;
+- `about.html` will provide information about the application and the developer;
+- Other views will enable the user to view the entire set of images (maybe with pagination) or subset based on filtering criteria;
+- Clicking on a single image will cause it to be rendered alone, at \~80% screen width, with a "Buy" button at bottom right.
+- Other views will enable a user to register, deregister or amend account details.
 
