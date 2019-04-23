@@ -54,7 +54,7 @@ In order not to distract or detract from the images themselves, the layout and d
 
 #### Image
 
-- Represents a fractal image that can be displayed, that can be ordered as a print, that contains information about the functions and parameters used to create it;
+- Represents a fractal image that can be displayed, that can be ordered as a print, that contains information about the functions and parameters used to create it, and that remembers orders;
 - Fields: name, image_id.   We could pre-extract the creation data from the filenames and store as fields, but it will perhaps be simpler, and minimally expensive, to create functions to extract the data as needed. Each Image item must provide a method to get both small and large versions from storage. 
 
 #### Order
@@ -71,3 +71,16 @@ In order not to distract or detract from the images themselves, the layout and d
 - Clicking on a single image will cause it to be rendered alone, at \~80% screen width, with a "Buy" button at bottom right.
 - Other views will enable a user to register, deregister or amend account details.
 
+## Development process log / overview
+
+* Set up S3 and Stripe accounts, created S3 bucket for static files
+* Set up basic Django 2 project structure (project: 'trif')
+* Created and set environment variables
+* S3 and Stripe settings
+* Other configuration in settings.py
+* Set up on Heroku and connected Github for automatic deployment on push
+* Configured Heroku Postgres database; using SQLite locally
+* Uploaded images to S3 bucket: Source Location: "trif-store/static/images/"
+* Created app: 'fract' and tested with 'Hello World' page
+* Make migrations
+* 
