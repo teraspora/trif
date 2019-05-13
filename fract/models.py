@@ -14,12 +14,12 @@ class Image(models.Model):
   def __str__(self):
     return self.name
 
-  def __init__(self, name = '', size = SMALL):
-    """ 
-    set image params from filename
-    """
-    self.name = name
-    self.size = size
+  # def __init__(self, name = '', size = SMALL):
+  #   """ 
+  #   set image params from filename
+  #   """
+  #   self.name = name
+  #   self.size = size
 
   
   def params(self):
@@ -27,5 +27,5 @@ class Image(models.Model):
 
 
 
-print('Testing...')
-print(Image('xtsJ2f291C207-pre65-scp-sri-877x620x-0.003710993058573697y-0.0018554965292867376_4266.png', '877x620').params())
+# print('Testing...')
+# print(Image('xtsJ2f291C207-pre65-scp-sri-877x620x-0.003710993058573697y-0.0018554965292867376_4266.png', '877x620').params())

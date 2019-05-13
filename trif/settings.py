@@ -114,9 +114,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-AUTHENTICATION_BACKENDS = [
-    'django.contrib.auth.backends.ModelBackend',
-    'accounts.backends.CaseInsensitiveAuth']
+# AUTHENTICATION_BACKENDS = [
+#     'django.contrib.auth.backends.ModelBackend',
+#     'accounts.backends.CaseInsensitiveAuth']
 
 # Internationalisation
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
