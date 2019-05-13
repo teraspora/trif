@@ -7,7 +7,7 @@ def get_image_params(image_name, res):
       Example args:
         image_name = "xtsM6f424C359-pre110-subc-sri-877x620x3.5741464342585774y3.0788630954174376_84077.png"
         res = "877x620";
-      Output: {'image_id': '4266', 'size': '877x620', 'type': 'M', 'power': '6', 'func': '424', 'alt_func': '359',
+      Output: {'image_id': '84077', 'size': '877x620', 'type': 'M', 'power': '6', 'func': '424', 'alt_func': '359',
         'mode': 'C','pretrans': '110', 'xparams': ['subc', 'sri']} 
   """
   temp = image_name.split(res, 1)
