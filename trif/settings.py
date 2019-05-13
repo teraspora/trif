@@ -162,9 +162,16 @@ DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 
 
 MEDIA_ROOT = mkdir('media')
-MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
-
+if DEVELOPMENT:
+    MEDIA_URL = '/media/'
+else:
+    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+    
 STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE')
 STRIPE_SECRET = os.getenv('STRIPE_SECRET')
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+LOGIN_REDIRECT_URL = 'blog-home'
+LOGIN_URL = 'login'
