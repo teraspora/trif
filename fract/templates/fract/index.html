@@ -3,8 +3,12 @@
 {% block content %}
 
     <div class="content-section">
+
       <h1>Teraspora Fractals Main Page</h1>
-      <img src="{% static 'images/zarg438/xtsJ2f224C309-438x310x-14.027619409603446y-9.9166349930318_19295.png' %}" alt="">
+
+      {% for name in image_names %}
+        <img src="{% static f'images/zarg438/{ name }' %}" alt="">
+      {% endfor %}
     </div>
 
 {% endblock content %}
