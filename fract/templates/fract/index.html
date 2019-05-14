@@ -7,8 +7,9 @@
       <h1>Teraspora Fractals Main Page</h1>
 
       {% for name in image_names %}
-        <img src="{% static f'images/zarg438/{ name }' %}" alt="">
+        <img src="{% static name %}" alt="">
       {% endfor %}
+      
     </div>
 
 {% endblock content %}
