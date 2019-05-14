@@ -1,0 +1,18 @@
+18:15: fractrig $ python3 manage.py shell
+Python 3.7.1 (default, Oct 22 2018, 11:21:55) 
+[GCC 8.2.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> import os
+>>> image_list = list(os.walk('./static/images/zarg438/'))[0][2]
+>>> len(image_list)
+348
+>>> im = image_list[0]
+>>> im
+'xtsM2f353C451-438x310x0.0y0.0_65185.png'
+>>> from fract.models import Image
+>>> for name in image_list:
+...     img = Image(name=name, size='438x310')
+...     img.save()
+... 
+>>> 
