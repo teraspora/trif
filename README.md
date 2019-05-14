@@ -83,7 +83,7 @@ In order not to distract or detract from the images themselves, the layout and d
 * Upload images to S3 bucket: Source Location: "trif-store/static/images/"
 * Create app: 'fract' and tested with 'Hello World' page
 * Do migrations, create superuser etc.
-* Create User model and views following [Corey Schafer's Django 2 tutorials][0], as suggested using code from Bootstrap in base template.   So I will try Bootstrap instead of Materialize
+* Create User model and views following [Corey Schafer's Django 2 tutorials][0], as suggested using code from Bootstrap and CS in base template.   So I will try Bootstrap instead of Materialize
 * Create Image model, migrate
 * Instantiate a set of Image objects (which simply contain the filename and size, as strings), corresponding to the images actually stored as static assets in my S3 bucket
 * Iterate over this set, saving each Image object to the database.   Used local images folder.   See the [console log][1]: 
