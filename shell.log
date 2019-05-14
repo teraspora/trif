@@ -16,3 +16,10 @@ Type "help", "copyright", "credits" or "license" for more information.
 ...     img.save()
 ... 
 >>> 
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+
+To push the content to the remote database I tried 
+`heroku pg:push db.sqlite3 postgresql-crystalline-18465 -a ztrif`
+unsuccessfully.   Needed
+`sudo apt install postgresql`
