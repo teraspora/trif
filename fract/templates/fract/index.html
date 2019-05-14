@@ -1,15 +1,29 @@
 {% extends 'users/base.html' %}
 {% load static %}
+
 {% block content %}
 
     <div class="content-section">
 
-      <h1>Teraspora Fractals Main Page</h1>
+        <h1>Teraspora Fractals Main Page</h1>
+        
+        <div class="row">
+  
+          {% for name in image_names %}
+            <div class="col-md-4">
+                <div class="thumbnail">
+                   <a href="{% static name %}">                
+                   <img src="{% static name %}" alt="fractal image" style="width:100%">
+                   <div class="caption">
+                     <p>Image n</p>
+                   </div>
+                   </a>
+                </div>
+              </div>
+          {% endfor %}
 
-      {% for name in image_names %}
-        <img src="{% static name %}" alt="">
-      {% endfor %}
-      
+        </div>
+        
     </div>
 
 {% endblock content %}
