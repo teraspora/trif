@@ -79,8 +79,15 @@ In order not to distract or detract from the images themselves, the layout and d
 * S3 and Stripe settings
 * Other configuration in settings.py
 * Set up on Heroku and connected Github for automatic deployment on push
-* Configured Heroku Postgres database; using SQLite locally
-* Uploaded images to S3 bucket: Source Location: "trif-store/static/images/"
-* Created app: 'fract' and tested with 'Hello World' page
-* Make migrations
-* 
+* Configure Heroku Postgres database; using SQLite locally
+* Upload images to S3 bucket: Source Location: "trif-store/static/images/"
+* Create app: 'fract' and tested with 'Hello World' page
+* Do migrations, create superuser etc.
+* Create User model and views following [Corey Schafer's Django 2 tutorials][0], as suggested using code from Bootstrap in base template.   So I will try Bootstrap instead of Materialize
+* Create Image model, migrate
+* Instantiate a set of Image objects (which simply contain the filename and size, as strings), corresponding to the images actually stored as static assets in my S3 bucket
+* Iterate over this set, saving each Image object to the database.   Used local images folder.   See the [console log][1]: 
+
+
+[0]: https://www.youtube.com/playlist?list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p
+[1]: file://shell.log
