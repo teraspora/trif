@@ -5,7 +5,7 @@ Code: https://github.com/CoreyMSchafer/code_snippets/blob/master/Django_Blog/sni
 */
 
 body {
-  background: #fafafa;
+  background: #024096;
   color: #333333;
   margin-top: 5rem;
 }
@@ -19,7 +19,7 @@ ul {
 }
 
 .bg-steel {
-  background-color: #5f788a;
+  background-color: #050220;
 }
 
 .site-header .navbar-nav .nav-link {
@@ -34,8 +34,12 @@ ul {
   font-weight: 500;
 }
 
+.site-header {
+  background-color: #050220;
+}
+
 .content-section {
-  background: #ffffff;
+  background: #050220;
   padding: 10px 20px;
   border: 1px solid #dddddd;
   border-radius: 3px;
@@ -87,4 +91,16 @@ a.article-title:hover {
 
 .account-heading {
   font-size: 2.5rem;
+}
+
+img.fractal {
+  border: 1px solid white;
+}
+
+.navbar-brand {
+  color: #ff9800;
+}
+
+.site-header .navbar-nav .nav-link {
+    color: #f1bf32;
 }
