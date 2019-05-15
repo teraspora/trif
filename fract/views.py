@@ -1,6 +1,10 @@
 from django.shortcuts import render
 from .models import Image
-# import fract.populate_db # ------- only run this to initially populate database with Image objects
+
+# ------- only run this to initially populate database with Image objects
+if len(Image.objects.all()) == 0:
+    import fract.populate_db 
+
 STATIC_IMAGE_DIR = 'images/zarg438/'
 
 def index(request):
