@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Image
-import fract.populate_db
+# import fract.populate_db
 STATIC_IMAGE_DIR = 'images/zarg438/'
 
 def index(request):

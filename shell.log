@@ -23,3 +23,25 @@ To push the content to the remote database I tried
 `heroku pg:push db.sqlite3 postgresql-crystalline-18465 -a ztrif`
 unsuccessfully.   Needed
 `sudo apt install postgresql`
+Reset database and tried again, unsuccessfully.
+Still failed with "role 'john' does not exist".
+
+So, now tried by running the code on the server, with list generated locally.
+Seems to have screwed up the database, so i will try to redo migrations locally then push to Heroku.
+
+find . -path "*/migrations/*.py" -not -name "__init__.py" -delete
+find . -path "*/migrations/*.pyc"  -delete
+rm -r db.sqlite3
+
+python3 manage.py
+####### failed with `ModuleNotFoundError: No module named 'django.db.migrations.migration'`
+So tried upgrading Django...
+
+pip install --upgrade django==2.2
+
+
+
+
+
+
+

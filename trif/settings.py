@@ -87,6 +87,7 @@ WSGI_APPLICATION = 'trif.wsgi.application'
 
 # For Heroku deployment, get the database url from Heroku config vars:
 if DEVELOPMENT:
+    print('In DEVELOPMENT context')
     DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -94,6 +95,7 @@ if DEVELOPMENT:
         }
     }
 else:
+    print('In PRODUCTION context')
     DATABASES = {
     'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     } 
