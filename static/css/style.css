@@ -97,7 +97,7 @@ img.fractal {
   border: 1px solid white;
 }
 
-.navbar-brand {
+.navbar-dark .navbar-brand {
   color: #ff9800;
 }
 
