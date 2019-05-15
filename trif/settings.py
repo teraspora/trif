@@ -157,9 +157,9 @@ STATICFILES_STORAGE = 'custom_storages.StaticStorage' # after setting up custom 
 # STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage' # what Niel uses in the videos
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (
+STATICFILES_DIRS = [
     mkdir('static'),
-    )
+    ]
 
 MEDIAFILES_LOCATION = 'media'
 DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
