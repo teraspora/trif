@@ -99,8 +99,10 @@ img.fractal {
 
 .navbar-dark .navbar-brand {
   color: #ff9800;
+    font-size: 2vw;
 }
 
 .site-header .navbar-nav .nav-link {
     color: #f1bf32;
+    font-size: 1.5vw;
 }
