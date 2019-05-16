@@ -30,22 +30,22 @@
 
           {% if is_paginated %}
             {% if page_obj.has_previous %}
-              <a href="?{% param_replace page=1 %}">First</a>
+              <a href="?{% param_replace page=1 %}">First&emsp;</a>
               {% if page_obj.previous_page_number != 1 %}
-                <a href="?{% param_replace page=page_obj.previous_page_number %}">Previous</a>
+                <a href="?{% param_replace page=page_obj.previous_page_number %}">Previous&emsp;</a>
               {% endif %}
             {% endif %}
 
-            Page {{ page_obj.number }} of {{ paginator.num_pages }}
+            Page&nbsp; {{ page_obj.number }}&nbsp; of&nbsp; {{ paginator.num_pages }}&emsp;
 
             {% if page_obj.has_next %}
               {% if page_obj.next_page_number != paginator.num_pages %}
-                <a href="?{% param_replace page=page_obj.next_page_number %}">Next</a>
+                <a href="?{% param_replace page=page_obj.next_page_number %}">Next&emsp;</a>
               {% endif %}
-              <a href="?{% param_replace page=paginator.num_pages %}">Last</a>
+              <a href="?{% param_replace page=paginator.num_pages %}">Last&emsp;</a>
             {% endif %}
 
-            <p>Images {{ page_obj.start_index }}—{{ page_obj.end_index }}</p>
+            <p>Images {{ page_obj.start_index }}&nbsp;-&nbsp;{{ page_obj.end_index }}</p>
           {% endif %}
 
         </div>
