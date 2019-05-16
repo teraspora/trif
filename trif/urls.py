@@ -20,3 +20,6 @@ urlpatterns = [
     path('profile/', user_views.profile, name='profile'),
     path('register/', user_views.register, name='register'),
 ]
+# this setting recommended in Django docs for development only
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
