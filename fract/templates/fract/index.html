@@ -9,13 +9,13 @@
         
         <div class="row">
   
-          {% for name, id in image_data %}
+          {% for img in image_list %}
             <div class="col-md-4">
                 <div class="thumbnail">
-                   <a href="{% static name %}">                
-                   <img class="fractal" src="{% static name %}" alt="fractal image" style="width:100%">
+                   <a href="{% static STATIC_IMAGE_DIR %}{{ img.name }}">                
+                   <img class="fractal" src="{% static STATIC_IMAGE_DIR %}{{ img.name }}" alt="fractal image" style="width:100%">
                    <div class="caption">
-                     <p>Image {{ id }}</p>
+                     <p>Image {{ img.id }}</p>
                    </div>
                    </a>
                 </div>
