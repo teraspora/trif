@@ -21,8 +21,10 @@ STATIC_IMAGE_DIR = 'images/zarg438/'
 
 class ImageListView(ListView):
     model = Image
+    paginate_by = 30
     template_name = 'fract/index.html'
     context_object_name = 'image_list'
+    ordering = '?'      # random ordering
 
     def get_context_data(self, **kwargs):
         context = super(ImageListView, self).get_context_data(**kwargs)
