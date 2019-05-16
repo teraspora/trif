@@ -86,8 +86,15 @@ In order not to distract or detract from the images themselves, the layout and d
 * Create User model and views following [Corey Schafer's Django 2 tutorials][0], as suggested using code from Bootstrap and CS in base template.   So I will try Bootstrap instead of Materialize
 * Create Image model, migrate
 * Instantiate a set of Image objects (which simply contain the filename and size, as strings), corresponding to the images actually stored as static assets in my S3 bucket
-* Iterate over this set, saving each Image object to the database.   Used local images folder.   See the [console log][1]: 
+* Iterate over this set, saving each Image object to the database.   Used local images folder.   See the [console log][1]
+* Many issues ensued, initially caused, I think, by my mistaken deletion of a migrations directory. At one point I upgraded Django from 2.1 to 2.2, backed up relevant files, recreated the project and apps.   Later, after mistakenly pushing a faulty commit, I got into a mess with git and ended up doing a `git rebase --hard` and then `git push -f`.   Not a very clean solution, rewriting history etc. but it got me sorted.
+* Minor tweaks to styling etc.
+* Change home page to a class-based view, subclassing ListView
+* Implement random ordering and [pagination][2] using a [custom template tag][3]
+* 
 
 
 [0]: https://www.youtube.com/playlist?list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p
 [1]: file://shell.log
+[2]: https://www.caktusgroup.com/blog/2018/10/18/filtering-and-pagination-django/
+[3]: https://docs.djangoproject.com/en/2.2/howto/custom-template-tags/
