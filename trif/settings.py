@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 import os
 import dj_database_url
 
-def mkdir(dirstr):
+def get_path(dirstr):
     """ Given a directory name return a path built from BASE_DIR with the given directory as a child """
     return os.path.join(BASE_DIR, dirstr)
 
@@ -65,7 +65,7 @@ ROOT_URLCONF = 'trif.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [mkdir('templates')],
+        'DIRS': [get_path('templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -91,7 +91,7 @@ if DEVELOPMENT:
     DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': mkdir('db.sqlite3'),
+        'NAME': get_path('db.sqlite3'),
         }
     }
 else:
@@ -158,14 +158,14 @@ STATICFILES_STORAGE = 'custom_storages.StaticStorage' # after setting up custom 
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    mkdir('static'),
+    get_path('static'),
     ]
 
 MEDIAFILES_LOCATION = 'media'
 DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 
 
-MEDIA_ROOT = mkdir('media')
+MEDIA_ROOT = get_path('media')
 
 if DEVELOPMENT:
     MEDIA_URL = '/media/'
