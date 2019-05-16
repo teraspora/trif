@@ -37,6 +37,5 @@ class ImageDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super(ImageDetailView, self).get_context_data(**kwargs)
         context['STATIC_IMAGE_DIR'] = STATIC_IMAGE_DIR
-        context_object_name = 'img'
         return context
 
