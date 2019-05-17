@@ -6,7 +6,8 @@ from .models import Image
 if len(Image.objects.all()) == 0:
     import fract.populate_db 
 
-STATIC_IMAGE_DIR = 'images/zarg438/'
+STATIC_SMALL_IMAGE_DIR = 'images/zarg438/'
+STATIC_LARGE_IMAGE_DIR = 'images/zarg877/'
 
 # OLD view-function, replaced by class-based view below
 # def index(request):
@@ -20,9 +21,7 @@ STATIC_IMAGE_DIR = 'images/zarg438/'
 #     return render(request, 'fract/index.html', context)
 
 class ImageListView(ListView):
-    """
-    List view of all images.
-    """
+    """ List view of all images. """
     model = Image
     paginate_by = 30
     template_name = 'fract/index.html'
@@ -35,13 +34,11 @@ class ImageListView(ListView):
         use this in the template for the image source path.
         """
         context = super(ImageListView, self).get_context_data(**kwargs)
-        context['STATIC_IMAGE_DIR'] = STATIC_IMAGE_DIR
+        context['STATIC_SMALL_IMAGE_DIR'] = STATIC_SMALL_IMAGE_DIR
         return context
 
 class ImageDetailView(DetailView):
-    """
-    Detail view of a single image
-    """
+    """ Detail view of a single image """
     model = Image
 
     def get_context_data(self, **kwargs):
@@ -50,6 +47,6 @@ class ImageDetailView(DetailView):
         use this in the template for the image source path
         """
         context = super(ImageDetailView, self).get_context_data(**kwargs)
-        context['STATIC_IMAGE_DIR'] = STATIC_IMAGE_DIR
+        context['STATIC_LARGE_IMAGE_DIR'] = STATIC_LARGE_IMAGE_DIR
         return context
 

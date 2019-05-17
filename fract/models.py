@@ -20,6 +20,9 @@ class Image(models.Model):
     """ Get (from the filename)a dictionary of the parameters used to construct the image """
     return img_params.get_image_params(self.name, self.size)
 
+  def name_large(self):
+    return self.name.replace(SMALL, LARGE)   
+
 
 
 # print('Testing...')
