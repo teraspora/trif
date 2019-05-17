@@ -20,6 +20,7 @@ STATIC_IMAGE_DIR = 'images/zarg438/'
 #     return render(request, 'fract/index.html', context)
 
 class ImageListView(ListView):
+    "List view of all images"
     model = Image
     paginate_by = 30
     template_name = 'fract/index.html'
@@ -27,14 +28,23 @@ class ImageListView(ListView):
     ordering = '?'      # random ordering
 
     def get_context_data(self, **kwargs):
+        """
+        Get the context and append the STATIC_IMAGE_DIR to it, so we can 
+        use this in the template for the image source path
+        """
         context = super(ImageListView, self).get_context_data(**kwargs)
         context['STATIC_IMAGE_DIR'] = STATIC_IMAGE_DIR
         return context
 
 class ImageDetailView(DetailView):
+    "Detail view of a single image"
     model = Image
 
     def get_context_data(self, **kwargs):
+        """
+        Get the context and append the STATIC_IMAGE_DIR to it, so we can 
+        use this in the template for the image source path
+        """
         context = super(ImageDetailView, self).get_context_data(**kwargs)
         context['STATIC_IMAGE_DIR'] = STATIC_IMAGE_DIR
         return context
