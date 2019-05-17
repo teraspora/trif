@@ -12,7 +12,7 @@
           {% for img in image_list %}
             <div class="col-md-4">
                 <div class="thumbnail">
-                   <a href="{% url image pk={{ img.id }}">                
+                   <a href="{% url 'image' pk=img.id %}">                
                    <img class="fractal" src="{% static STATIC_IMAGE_DIR %}{{ img.name }}" alt="fractal image" style="width:100%">
                    <div class="caption">
                      <p>Image {{ img.id }}</p>
