@@ -189,9 +189,6 @@ EMAIL_HOST_USER = os.getenv('EMAIL_USER')   # gmail address
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_PASS')   # gmail app password for trif
 
 
-print(f'{EMAIL_BACKEND}, \n{EMAIL_HOST}, \n{EMAIL_PORT}, \n{EMAIL_USE_TLS}, \n{EMAIL_HOST_USER}, \n{EMAIL_HOST_PASSWORD}, \n')
-
-
 
 
 
