@@ -36,6 +36,7 @@ ul {
 
 .site-header {
   background-color: #050220;
+  border-bottom: 1px solid white;
 }
 
 .content-section {
@@ -110,3 +111,4 @@ img.fractal {
 .main-container {
   padding-top: 2vh;
 }
+
