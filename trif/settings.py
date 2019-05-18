@@ -180,3 +180,24 @@ MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 LOGIN_REDIRECT_URL = 'index'
 LOGIN_URL = 'login'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = os.getenv('EMAIL_USER')   # gmail address
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_PASS')   # gmail app password for trif
+
+
+print(f'{EMAIL_BACKEND}, \n{EMAIL_HOST}, \n{EMAIL_PORT}, \n{EMAIL_USE_TLS}, \n{EMAIL_HOST_USER}, \n{EMAIL_HOST_PASSWORD}, \n')
+
+
+
+
+
+
+
+
+
+
+
