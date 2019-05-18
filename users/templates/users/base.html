@@ -47,9 +47,12 @@
         </div>
       </nav>
     </header>
+<!-- END OF HEADER -->
 
+<!-- MAIN CONTENT STARTS HERE -->
     <main role="main" class="container main-container">
       <div class="row">
+<!-- MESSAGES IF ANY... -->
         <div class="col-md-8">
           {% if messages %}
               {% for message in messages %}
@@ -58,7 +61,7 @@
                 </div>
               {% endfor %}
           {% endif %}
-          
+<!-- SPECIFIC CONTENT -->
           {% block content %}
           {% endblock %}
         </div>
