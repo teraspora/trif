@@ -93,7 +93,8 @@ In order not to distract or detract from the images themselves, the layout and d
 * Implement random ordering and [pagination][2] using a [custom template tag][3]
 * Style pagination buttons
 * Add favicon.ico
-
+* Set up gmail address with two-factor authentication
+* 
 
 
 [0]: https://www.youtube.com/playlist?list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p
