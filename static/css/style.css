@@ -5,14 +5,14 @@ Code: https://github.com/CoreyMSchafer/code_snippets/blob/master/Django_Blog/sni
 */
 
 body {
-  background: #024096;
-  color: #333333;
-  margin-top: 5rem;
   --dark-blue: #050220;
   --text-yellow: #f1bf32;
   --text-orange: #ff9800;
   --light-blue: #428bca;
-
+  background: var(--light-blue);
+  color: var(--text-yellow);
+  margin-top: 5rem;
+  
 }
 
 h1, h2, h3, h4, h5, h6 {
