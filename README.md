@@ -91,7 +91,9 @@ In order not to distract or detract from the images themselves, the layout and d
 * Minor tweaks to styling etc.
 * Change home page to a class-based view, subclassing ListView
 * Implement random ordering and [pagination][2] using a [custom template tag][3]
-* 
+* Style pagination buttons
+* Add favicon.ico
+
 
 
 [0]: https://www.youtube.com/playlist?list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p
