@@ -26,22 +26,23 @@
 
           {% if is_paginated %}
             {% if page_obj.has_previous %}
-              <a href="?{% param_replace page=1 %}">First&emsp;</a>
+              <a class="btn btn-outline-info mr-4" class="btn btn-outline-info mb-4" href="?{% param_replace page=1 %}">First</a>
               {% if page_obj.previous_page_number != 1 %}
-                <a href="?{% param_replace page=page_obj.previous_page_number %}">Previous&emsp;</a>
+                <a class="btn btn-outline-info mr-4" href="?{% param_replace page=page_obj.previous_page_number %}">Previous</a>
               {% endif %}
             {% endif %}
 
-            Page&nbsp; {{ page_obj.number }}&nbsp; of&nbsp; {{ paginator.num_pages }}&emsp;
 
             {% if page_obj.has_next %}
               {% if page_obj.next_page_number != paginator.num_pages %}
-                <a href="?{% param_replace page=page_obj.next_page_number %}">Next&emsp;</a>
+                <a class="btn btn-outline-info mr-4" class="btn btn-outline-info mb-4" href="?{% param_replace page=page_obj.next_page_number %}">Next</a>
               {% endif %}
-              <a href="?{% param_replace page=paginator.num_pages %}">Last&emsp;</a>
+              <a class="btn btn-outline-info mr-4" class="btn btn-outline-info mb-4" href="?{% param_replace page=paginator.num_pages %}">Last</a>
             {% endif %}
-
-            <p>Images {{ page_obj.start_index }}&nbsp;-&nbsp;{{ page_obj.end_index }}</p>
+            
+            <div class="border">
+              Page&nbsp; {{ page_obj.number }} of {{ paginator.num_pages }}
+            </div>
           {% endif %}
 
         </div>
