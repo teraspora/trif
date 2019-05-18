@@ -40,6 +40,23 @@ So tried upgrading Django...
 pip install --upgrade django==2.2
 
 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Later...
+
+Adding image data to the database:
+
+02:25: fractrig $ python3 manage.py shell
+In DEVELOPMENT context
+Python 3.7.1 (default, Oct 22 2018, 11:21:55) 
+[GCC 8.2.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from fract import add_images
+Enter directory string: fract/test
+Directory: fract/test.   Continue? y/ny
+xtsJ1f353C401-pre60-sri-438x310x-3.036256350301346y-1.4303025782411303_5841.png saved.
+Done.   1 image names saved in the database.
 
 
 
