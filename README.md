@@ -94,6 +94,7 @@ In order not to distract or detract from the images themselves, the layout and d
 * Style pagination buttons
 * Add favicon.ico
 * Set up gmail address with two-factor authentication
+* Implement and debug password reset via gmail, using Django's built-in PasswordResetView etc.
 * 
 
 
