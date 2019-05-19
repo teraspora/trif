@@ -14,3 +14,9 @@ def create_profile(sender, instance, created, **kwargs):
 @receiver(post_save, sender=User)
 def save_profile(sender, instance, **kwargs):
     instance.profile.save()
+
+# Following not testing ok, needs tweaking...
+# def save_profile(sender, instance, **kwargs):
+#     img = resizeimage.resize_height(instance.profile.image, 128)
+#     instance.profile.image = img
+#     instance.profile.save(self, **kwargs)
