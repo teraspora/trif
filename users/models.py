@@ -3,7 +3,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from PIL import Image
-from resizeimage import resizeimage
+# from resizeimage import resizeimage
 
 class Profile(models.Model):
     # CASCADE => if user is deleted, then user's profile is also deleted
