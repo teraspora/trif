@@ -5,109 +5,28 @@ Code: https://github.com/CoreyMSchafer/code_snippets/blob/master/Django_Blog/sni
 */
 
 body {
-  --dark-blue: #050220;
-  --text-yellow: #f1bf32;
-  --text-orange: #ff9800;
-  --light-blue: #024096;
-  --hover-colour: #ff1b3a;
-  --narrow-border-colour: #ffffff;
-  background: var(--light-blue);
-  color: var(--text-yellow);
-  margin-top: 5rem;
+    --dark-blue: #050220;
+    --text-yellow: #f1bf32;
+    --text-orange: #ff9800;
+    --light-blue: #024096;
+    --hover-colour: #ff1b3a;
+    --narrow-border-colour: #ffffff;
+    background: var(--light-blue);
+    color: var(--text-yellow);
+    margin-top: 5rem;
   
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: var(--text-yellow);
+    color: var(--text-yellow);
 }
 
 ul {
-  margin: 0;
+    margin: 0;
 }
 
 .bg-dark {
-  background-color: var(--dark-blue) !important;
-}
-
-.site-header .navbar-nav .nav-link {
-  color: var(--light-blue);
-}
-
-.site-header .navbar-nav .nav-link:hover {
-  color: var(--hover-colour);
-}
-
-.site-header .navbar-nav .nav-link.active {
-  font-weight: 500;
-}
-
-.site-header {
-  background-color: var(--dark-blue) !important;
-  border-bottom: 2px solid white;
-}
-
-.content-section {
-  background: var(--dark-blue);
-  padding: 10px 20px;
-  border: 1px solid var(--narrow-border-colour);
-  border-radius: 3px;
-  margin-bottom: 20px;
-}
-
-.article-title {
-  color: var(--text-yellow);
-}
-
-a.article-title:hover {
-  color: var(--light-blue);
-  text-decoration: none;
-}
-
-.article-content {
-  white-space: pre-line;
-}
-
-.article-img {
-  height: 65px;
-  width: 65px;
-  margin-right: 16px;
-}
-
-.article-metadata {
-  padding-bottom: 1px;
-  margin-bottom: 4px;
-  border-bottom: 1px solid var(--text-yellow);
-}
-
-.article-metadata a:hover {
-  color: var(--light-blue);
-  text-decoration: none;
-}
-
-.article-svg {
-  width: 25px;
-  height: 25px;
-  vertical-align: middle;
-}
-
-.account-img {
-  height: 125px;
-  width: 125px;
-  margin-right: 20px;
-  margin-bottom: 16px;
-}
-
-.account-heading {
-  font-size: 2.5rem;
-}
-
-img.fractal {
-  border: 1px solid var(--narrow-border-colour);
-}
-
-.navbar-dark .navbar-brand {
-  color: var(--text-orange);
-    font-size: 2vw;
+    background-color: var(--dark-blue) !important;
 }
 
 .site-header .navbar-nav .nav-link {
@@ -115,7 +34,43 @@ img.fractal {
     font-size: 1.5vw;
 }
 
+.site-header .navbar-nav .nav-link:hover {
+    color: var(--hover-colour);
+    font-size: 1.6vw;
+}
+
+.site-header .navbar-nav .nav-link.active {
+    font-weight: 500;
+}
+
+.site-header {
+    background-color: var(--dark-blue) !important;
+    border-bottom: 1px solid white;
+}
+
+.content-section {
+    background: var(--dark-blue);
+    padding: 10px 20px;
+    border: 1px solid var(--narrow-border-colour);
+    border-radius: 3px;
+    margin-bottom: 20px;
+}
+
+img.fractal {
+    border: 1px solid var(--narrow-border-colour);
+}
+
+.navbar-dark .navbar-brand {
+    color: var(--text-orange);
+    font-size: 2vw;
+}
+
+.navbar-dark .navbar-brand:hover {
+    color: var(--hover-colour);
+    font-size: 2.1vw;
+}
+
 .main-container {
-  padding-top: 2vh;
+    padding-top: 2vh;
 }
 
