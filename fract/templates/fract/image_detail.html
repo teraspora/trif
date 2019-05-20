@@ -12,7 +12,20 @@
           <div class="card" style="width: 80vw;">
             <img class="card-img-top img-fluid" src="{% static STATIC_LARGE_IMAGE_DIR %}{{ object.name_large }}" alt="fractal image">
             <div class="card-body">
-              <p class="card-text"><p>Image&nbsp; {{ object.id }} (func.&nbsp;{{ object.params.func }})</p></p>
+              <p class="card-text">
+                <p>Image&nbsp; {{ object.id }} (func.&nbsp;{{ object.params.func }})
+                </p>
+                <button
+                    class="btn btn-outline-info snipcart-add-item"
+                    data-item-id="{{ object.id }}"
+                    data-item-name="fractal"
+                    data-item-price="35.00"
+                    data-item-weight="0.5"
+                    data-item-description="Fractal Print {{ object.id }}">
+                        Buy!
+                </button>
+                <a href="#" class="snipcart-checkout">Click here to checkout</a>
+              </p>
             </div>
           </div>     
 
