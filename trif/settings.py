@@ -153,8 +153,9 @@ AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATICFILES_LOCATION = 'static'
-STATICFILES_STORAGE = 'custom_storages.StaticStorage' # after setting up custom storages
-# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage' # what Niel uses in the videos
+ 
+STATICFILES_STORAGE = ('django.contrib.staticfiles.storage.StaticFilesStorage' if DEVELOPMENT 
+    else 'custom_storages.StaticStorage')   # after setting up custom_storages.py
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
@@ -167,10 +168,7 @@ DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 
 MEDIA_ROOT = get_path('media')
 
-if DEVELOPMENT:
-    MEDIA_URL = '/media/'
-else:
-    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
 
 # STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE')
 # STRIPE_SECRET = os.getenv('STRIPE_SECRET')
