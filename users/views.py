@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 from django.contrib.auth.decorators import login_required
@@ -41,8 +41,14 @@ def profile(request):
     }
     return render(request, 'users/profile.html', context)
 
-def add_like(request):
+def add_like(request, img_id):
     user = request.user
-    user.profile.liked_images.add(Image.objects.get(id=896))
+    img = get_object_or_404(Image, pk=img_id)
+    
+    # DEBUG - Remove in production
+    print(f'***** Request *****\n{request}\n')
+
+    user.profile.liked_images.add(img)
     user.profile.save()
-    return redirect('index')
+    # return redirect(f'/image/{img_id}')
+    return redirect(f'/image/{img_id}')

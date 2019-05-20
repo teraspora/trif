@@ -14,7 +14,7 @@ class Image(models.Model):
   size = models.CharField(max_length = 7, default = SMALL)
 
   def __str__(self):
-    return self.name
+    return f'Image { self.id }'
   
   def params(self):
     """ Get (from the filename)a dictionary of the parameters used to construct the image """

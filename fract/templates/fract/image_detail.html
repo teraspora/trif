@@ -26,6 +26,7 @@
                         data-item-description="Fractal Print {{ object.id }}">
                             Buy! Only €35
                     </button>
+                    <a class="btn btn-warning btn-sm float-right" href="{% url 'add_like' img_id=object.id %}"><i class="fas fa-heart fa_custom"></i></a >
                 {% else %}
                     <a href="{% url 'login' %}" class="btn btn-primary">Log in to buy...</a>
                 {% endif %}
