@@ -18,7 +18,7 @@
                      <span>Image {{ img.id }}</span>
 
                      {% if user.is_authenticated %}
-                      <a class="btn btn-warning btn-sm float-right" href="{% url 'add_like' %}">Like</a >
+                      <a class="btn btn-warning btn-sm float-right" href="{% url 'add_like'  pk=img.id %}"><i class="fas fa-heart"></i></a >
                      {% endif %}
 
                    </div>
