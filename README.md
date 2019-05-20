@@ -95,7 +95,11 @@ In order not to distract or detract from the images themselves, the layout and d
 * Add favicon.ico
 * Set up gmail address with two-factor authentication
 * Implement and debug password reset via gmail, using Django's built-in PasswordResetView etc.
-* 
+* Improve styling
+* Attempt unsuccessfully to override save() method of django.contrib.auth.models.Model in order to resize profile images before saving; also tried by using the post_save() signal method; need to revisit this as otherwise large profile images will take too long to load
+* Create branch to implement Snipcart shopping facility
+* When mostly working, merge into master and deploy
+*
 
 
 [0]: https://www.youtube.com/playlist?list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p
