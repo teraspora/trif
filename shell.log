@@ -84,4 +84,10 @@ Operations to perform:
   Apply all migrations: admin, auth, contenttypes, fract, sessions, users
 Running migrations:
   Applying users.0002_profile_liked_images... OK
-
+#########################################################################################
+from django.contrib.auth.models import User
+from fract.models import Image
+dave = User.objects.filter(username='dave')[0]
+dnl = dave.profile.liked_images.count()
+john = User.objects.filter(username='john')[0]
+jnl = john.profile.liked_images.count()
