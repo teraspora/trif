@@ -15,7 +15,12 @@
                    <a href="{% url 'image' pk=img.id %}">                
                    <img class="fractal" src="{% static STATIC_SMALL_IMAGE_DIR %}{{ img.name }}" alt="fractal image" style="width:100%">
                    <div class="caption">
-                     <p>Image {{ img.id }}</p>
+                     <span>Image {{ img.id }}</span>
+
+                     {% if user.is_authenticated %}
+                      <a class="btn btn-primary btn-sm float-right" href="#">Like</a >
+                     {% endif %}
+
                    </div>
                    </a>
                 </div>
