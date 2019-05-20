@@ -15,16 +15,21 @@
               <p class="card-text">
                 <p>Image&nbsp; {{ object.id }} (func.&nbsp;{{ object.params.func }})
                 </p>
-                <button
-                    class="btn btn-primary snipcart-add-item"
-                    data-item-id="{{ object.id }}"
-                    data-item-name="fractal-print-{{ object.id }}"
-                    data-item-url="/image/{{ object.id }}"
-                    data-item-price="35.00"
-                    data-item-weight="0.5"
-                    data-item-description="Fractal Print {{ object.id }}">
-                        Buy! Only €35
-                </button>
+                {% if user.is_authenticated %}
+                    <button
+                        class="btn btn-primary snipcart-add-item"
+                        data-item-id="{{ object.id }}"
+                        data-item-name="fractal-print-{{ object.id }}"
+                        data-item-url="/image/{{ object.id }}"
+                        data-item-price="35.00"
+                        data-item-weight="0.5"
+                        data-item-description="Fractal Print {{ object.id }}">
+                            Buy! Only €35
+                    </button>
+                {% else %}
+                    <a href="{% url 'login' %}" class="btn btn-primary">Log in to buy...</a>
+                {% endif %}
+
                 
               </p>
             </div>
