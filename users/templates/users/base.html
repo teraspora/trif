@@ -16,7 +16,7 @@
     {% if title %}
         <title>Teraspora Fractals - {{ title }}</title>
     {% else %}
-        <title>Teraspora Fractals - No title supplied</title>
+        <title>Teraspora Fractals</title>
     {% endif %}
 </head>
 <body>
@@ -82,7 +82,26 @@
         </div>
       </div>
     </main>
-
+    <footer class="footer mt-auto py-3">
+      <div class="container">
+        <div class="text-muted">
+          <ul class="social-icons">
+              <li><a target="_blank"
+                href="https://twitter.com/teraspora" class="social-icon"> <i class="fab fa-twitter"></i></a></li>
+              <li><a target="_blank"
+                href="https://github.com/teraspora" class="social-icon"> <i class="fab fa-github"></i></a></li>
+              <li><a target="_blank"
+                href="https://www.linkedin.com/in/john-lynch-ballydehob/" class="social-icon"> <i class="fab fa-linkedin"></i></a></li>
+              <li><a target="_blank" href="https://www.shadertoy.com/user/teraspora" class="social-icon">
+                    <i class="icon icon-st">
+                      <img src="{% static 'icons/shadert.jpg' %}" alt="Shadertoy icon">
+                    </i>
+                  </a>
+              </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
     <!-- Below script links copied from https://getbootstrap.com/docs/4.0/getting-started/introduction/ -->
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
