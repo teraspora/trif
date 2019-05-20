@@ -36,7 +36,7 @@ ul {
 
 .site-header .navbar-nav .nav-link:hover {
     color: var(--hover-colour);
-    font-size: 1.6vw;
+    transform: scale(1.04);
 }
 
 .site-header .navbar-nav .nav-link.active {
@@ -67,10 +67,13 @@ img.fractal {
 
 .navbar-dark .navbar-brand:hover {
     color: var(--hover-colour);
-    font-size: 2.1vw;
+    transform: scale(1.04);
 }
 
 .main-container {
     padding-top: 2vh;
 }
 
+.btn-info, .btn-primary {
+  border: 1px var(--dark-blue);
+}
