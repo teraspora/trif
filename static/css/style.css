@@ -74,6 +74,6 @@ img.fractal {
     padding-top: 2vh;
 }
 
-.btn-info, .btn-primary {
-  border: 1px var(--dark-blue);
+.btn, .btn-info, .btn-primary {
+  border: 1px var(--dark-blue) !important;
 }
