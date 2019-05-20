@@ -76,4 +76,5 @@ img.fractal {
 
 .btn, .btn-info, .btn-primary {
   border: 1px var(--dark-blue) !important;
+  border-radius: 50%;
 }
