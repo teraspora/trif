@@ -88,6 +88,11 @@ img.fractal {
   margin-right: -25px;
 }
 
+footer {
+    background-color: var(--dark-blue);
+    border-top: 2px solid var(--narrow-border-colour);
+}
+
 /* Font Awesome styling for social icons in footer */
 /* Copied, updated and adapted from my website www.teraspora.net, my CI Milestone 1 project */
 .social-icon {
