@@ -45,7 +45,7 @@ ul {
 
 .site-header {
     background-color: var(--dark-blue) !important;
-    border-bottom: 1px solid var(--narrow-border-colour);
+    border-bottom: 2px solid var(--narrow-border-colour);
 }
 
 .content-section {
@@ -105,7 +105,14 @@ ul.social-icons {
 .social-icons li {
     vertical-align: top;
     display: inline;
+    margin-right: 2vw;
 }
+/* Below omitted temporarily as not working - need to be set on block or inline-block element I think... */
+/*.social-icons li:hover {
+    transform: scale(1.1);
+}
+*/
+
 .social-icons a {
     color: #fff;
     text-decoration: none;
