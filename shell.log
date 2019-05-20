@@ -60,5 +60,28 @@ Done.   1 image names saved in the database.
 
 
 
+Later...
 
+Added 'liked_images' as ManyToManyField in user profile model:
+
+class Profile(models.Model):
+    # CASCADE => if user is deleted, then user's profile is also deleted
+    # OneToOneField => user has same structure as User model from django.contrib.auth.models
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    image = models.ImageField(default='default.jpg', upload_to='profile_pics')
+    liked_images = models.ManyToManyField(Image)
+
+Then did migrations:
+
+(ft)$ python3 manage.py makemigrations
+In DEVELOPMENT context
+Migrations for 'users':
+  users/migrations/0002_profile_liked_images.py
+    - Add field liked_images to profile
+(ft)$ python3 manage.py migrate
+In DEVELOPMENT context
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, fract, sessions, users
+Running migrations:
+  Applying users.0002_profile_liked_images... OK
 
