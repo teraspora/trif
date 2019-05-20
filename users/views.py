@@ -2,8 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 from django.contrib.auth.decorators import login_required
-
- # Create your views here.
+from fract.models import Image
 
 def register(request):
     if request.method == 'POST':
@@ -41,3 +40,9 @@ def profile(request):
         'p_form': p_form
     }
     return render(request, 'users/profile.html', context)
+
+def add_like(request):
+    user = request.user
+    user.profile.liked_images.add(Image.objects.get(id=896))
+    user.profile.save()
+    return redirect('index')
