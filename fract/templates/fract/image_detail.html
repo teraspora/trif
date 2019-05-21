@@ -30,6 +30,9 @@
                 {% else %}
                     <a href="{% url 'login' %}" class="btn btn-primary">Log in to buy...</a>
                 {% endif %}
+                <p>
+                  Likes: {{ object.num_likes }}
+                </p>
 
                 
               </p>
