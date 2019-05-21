@@ -154,8 +154,7 @@ AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 
 STATICFILES_LOCATION = 'static'
  
-STATICFILES_STORAGE = ('django.contrib.staticfiles.storage.StaticFilesStorage' if DEVELOPMENT 
-    else 'custom_storages.StaticStorage')   # after setting up custom_storages.py
+STATICFILES_STORAGE = 'custom_storages.StaticStorage'   # after setting up custom_storages.py
 
 # STATICFILES_STORAGE = ('django.contrib.staticfiles.storage.StaticFilesStorage' if DEVELOPMENT 
 #     else 'custom_storages.StaticStorage')   # after setting up custom_storages.py
