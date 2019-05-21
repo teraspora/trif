@@ -21,9 +21,11 @@ class Image(models.Model):
     return img_params.get_image_params(self.name, self.size)
 
   def name_large(self):
-    return self.name.replace(SMALL, LARGE)   
+    """ Return name of large image associated with this Image object """ 
+    return self.name.replace(SMALL, LARGE)
 
-
-
-# print('Testing...')
-# print(Image('xtsJ2f291C207-pre65-scp-sri-877x620x-0.003710993058573697y-0.0018554965292867376_4266.png', '877x620').params())
+  def num_likes(self):
+    """ Return the number of users who have liked this image """
+    # profile_set links to the ManyToManyField 'liked_images'
+    # in a user's Profile object (see users/models.py)
+    return self.profile_set.all().count()   
