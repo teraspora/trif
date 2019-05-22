@@ -45,19 +45,26 @@ ul {
 
 .site-header {
     background-color: var(--dark-blue) !important;
-    border-bottom: 2px solid var(--narrow-border-colour);
 }
 
 .content-section {
     background: var(--dark-blue);
     padding: 10px 20px;
-    border: 1px solid var(--narrow-border-colour);
+    border-top: 2px solid var(--narrow-border-colour);
     border-radius: 3px;
     margin-bottom: 20px;
 }
 
 img.fractal {
     border: 1px solid var(--narrow-border-colour);
+}
+
+.card-img-top {
+    border: 1px solid white;
+}
+.card-body {
+    background-color: black;
+    margin-top: 1vh;
 }
 
 .navbar-dark .navbar-brand {
@@ -91,6 +98,7 @@ img.fractal {
 footer {
     background-color: var(--dark-blue);
     border-top: 1px solid var(--narrow-border-colour);
+    margin-bottom: -30px;
 }
 
 /* Font Awesome styling for social icons in footer */
