@@ -52,7 +52,6 @@ ul {
 .content-section {
     background: var(--dark-blue);
     padding: 10px 20px;
-    border-top: 2px solid var(--narrow-border-colour);
     border-radius: 3px;
     margin-bottom: 20px;
 }
