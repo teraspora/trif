@@ -151,6 +151,7 @@ In order not to distract or detract from the images themselves, the layout and d
     - Find best way to shrink profile pictures
     - Fix issue of Django admin static files being included in 'collectstatic'
     - Testing; maybe CT/CI with Travis
+    - Test responsiveness on mobile devices
     - Code linting / validation
     - Run CSS through Autoprefixer
     
