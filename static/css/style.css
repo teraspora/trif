@@ -51,13 +51,18 @@ ul {
 
 .content-section {
     background: var(--dark-blue);
-    padding: 10px 20px;
+    padding: 5px 21px;
     border-radius: 3px;
     margin-bottom: 20px;
 }
 
 img.fractal {
     border: 1px solid var(--narrow-border-colour);
+    transition: transform 0.5s ease-in-out;
+}
+
+img.fractal:hover {
+    transform: scale(1.25);
 }
 
 .card {
@@ -75,6 +80,7 @@ img.fractal {
 .navbar-dark .navbar-brand {
     color: var(--text-orange);
     font-size: 2vw;
+    border-bottom: 1px solid var(--narrow-border-colour);
 }
 
 .navbar-dark .navbar-brand:hover {
