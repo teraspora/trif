@@ -146,6 +146,7 @@ In order not to distract or detract from the images themselves, the layout and d
     - Adjust navbar icon placement and font size
     - Implement filtering options
     - Make background black beneath image card text - DONE
+    - Fix disappearing 'Heart' icon on mobile
     - Finish this README.md, including acknowledgements
     - Write content for "About" page
     - Find best way to shrink profile pictures
