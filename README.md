@@ -96,7 +96,7 @@ In order not to distract or detract from the images themselves, the layout and d
 
 - Represents an Order made by a User for an Image;
 - Fields: order_id, user_id (foreign key), order_details (containing despatch address, list of Image items and quantities, whether paid).
-- Not necessary to implement this as Snipcart handles and stores the orders; however, in a future version it could be useful.    
+- It was not found necessary to implement this as Snipcart handles and stores the orders; however, in a future version it could be useful.    
 
 ### Views and Templates
 
@@ -142,9 +142,10 @@ In order not to distract or detract from the images themselves, the layout and d
 * Final Stages: To Do:
     - Snipcart - Empty cart on logout
     - Side panel - make tabs, show filtering options
-    - Fix footer background
+    - Fix footer background - DONE
+    - Adjust navbar icon placement and font size
     - Implement filtering options
-    - Make background black beneath image detail
+    - Make background black beneath image card text - DONE
     - Finish this README.md, including acknowledgements
     - Write content for "About" page
     - Find best way to shrink profile pictures
@@ -159,7 +160,7 @@ In order not to distract or detract from the images themselves, the layout and d
     - Store a user's cart in case s/he logs out or clears browser cache
     - Improve styling and find a better way to present the images, perhaps with a higher-resolution version (perhaps 2806 x 1984) for users prepared to wait, and a smaller version for list view on mobile
     - Further customise the Snipcart workflow 
-    - Store orders in the user profile, display for the user's convenience, and for marketing purposes
+    - Store orders in the user profile, display for the user's convenience, and think how to use for marketing purposes
 
 ## Testing
 
