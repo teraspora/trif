@@ -156,6 +156,7 @@ STATICFILES_LOCATION = 'static'
  
 STATICFILES_STORAGE = 'custom_storages.StaticStorage'   # after setting up custom_storages.py
 
+# Use the below code to get CSS locally, but needs to be disabled if running collectstatic:
 # STATICFILES_STORAGE = ('django.contrib.staticfiles.storage.StaticFilesStorage' if DEVELOPMENT 
 #     else 'custom_storages.StaticStorage')   # after setting up custom_storages.py
 
