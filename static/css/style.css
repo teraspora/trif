@@ -87,8 +87,14 @@ nav {
 
 .navbar-dark .navbar-brand {
     color: var(--text-orange);
-    font-size: 2vw;
+    font-size: 4vmax;
 }
+
+/*@media only screen and (min-width: 600px) {
+  .navbar-dark .navbar-brand {
+    font-size: 2vw;
+  }
+}*/
 
 .navbar-dark .navbar-brand:hover {
     color: var(--hover-colour);
@@ -113,7 +119,12 @@ nav {
   margin-right: -25px;
 }
 
+main {
+    min-height: calc(100vh - 72px);
+}
+
 footer {
+    min-height: 72px;
     background-color: var(--dark-blue);
     border-top: 1px solid var(--narrow-border-colour);
     margin-bottom: -30px;
