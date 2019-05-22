@@ -58,11 +58,15 @@ ul {
 
 img.fractal {
     border: 1px solid var(--narrow-border-colour);
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out, border-radius 2s ease-out;
+    border-radius: 3px;
+    z-index: 128;
 }
 
 img.fractal:hover {
     transform: scale(1.25);
+    border-radius: 30px;
+    z-index: 128;
 }
 
 .card {
@@ -77,10 +81,13 @@ img.fractal:hover {
     border: 1px solid var(--narrow-border-colour);
 }
 
+nav {
+    border-bottom: 1px solid var(--narrow-border-colour);
+}
+
 .navbar-dark .navbar-brand {
     color: var(--text-orange);
     font-size: 2vw;
-    border-bottom: 1px solid var(--narrow-border-colour);
 }
 
 .navbar-dark .navbar-brand:hover {
