@@ -69,6 +69,25 @@ img.fractal:hover {
     z-index: 128;
 }
 
+.thumb-wrapper {
+    position: absolute;
+    right: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.thumbnail {
+    position: relative;
+    margin-bottom: 28px;
+}
+
+.caption {
+    position: absolute;
+    right: 10px;
+    width: 100%;
+    text-align: center;
+}
+
 .card {
     background-color: var(--bg-very-dark);
 }
