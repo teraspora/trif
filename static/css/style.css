@@ -69,12 +69,15 @@ img.fractal:hover {
     z-index: 128;
 }
 
-.thumb-wrapper {
+/* following suggested by Nishant
+   but not clear what element to apply it to... */
+
+/*.thumb-wrapper {
     position: absolute;
     right: 10px;
     width: 100%;
     text-align: center;
-}
+}*/
 
 .thumbnail {
     position: relative;
@@ -104,14 +107,21 @@ nav {
     border-bottom: 1px solid var(--narrow-border-colour);
 }
 
-.navbar-dark .navbar-brand {
+.navbar-brand {
     color: var(--text-orange);
     font-size: 4vmax;
+}
+
+.nav-item.nav-link {
+    font-size: 3.4vmax;
 }
 
 @media only screen and (min-width: 769px) {
   .navbar-dark .navbar-brand {
     font-size: 2.2vw;
+  }
+  .nav-item.nav-link {
+    font-size: 2vw;
   }
 }
 
