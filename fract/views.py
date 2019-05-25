@@ -50,3 +50,6 @@ class ImageDetailView(DetailView):
         context['STATIC_LARGE_IMAGE_DIR'] = STATIC_LARGE_IMAGE_DIR
         return context
 
+# OLD view-function, replaced by class-based view below
+def about(request):
+    return render(request, 'fract/about.html')
