@@ -147,6 +147,7 @@ In order not to distract or detract from the images themselves, the layout and d
     - Implement filtering options
     - Make background black beneath image card text - DONE
     - Fix disappearing 'Heart' icon on mobile
+    - Fix Snipcart sometimes not verifying orders
     - Finish this README.md, including acknowledgements
     - Write content for "About" page
     - Find best way to shrink profile pictures
