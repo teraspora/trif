@@ -145,6 +145,7 @@ In order not to distract or detract from the images themselves, the layout and d
     - Fix footer background - DONE
     - Adjust navbar icon placement and font size
     - Implement filtering options
+    - Fix Snipcart sometimes not finding product when scraping page
     - Make background black beneath image card text - DONE
     - Fix disappearing 'Heart' icon on mobile
     - Finish this README.md, including acknowledgements
