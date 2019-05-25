@@ -107,7 +107,7 @@ nav {
     border-bottom: 1px solid var(--narrow-border-colour);
 }
 
-.navbar-brand {
+.navbar-dark .navbar-brand {
     color: var(--text-orange);
     font-size: 4vmax;
 }
@@ -117,12 +117,17 @@ nav {
 }
 */
 @media only screen and (min-width: 769px) {
-  .navbar-dark .navbar-brand {
-    font-size: 2.2vw;
+  .site-header .navbar-nav .nav-link {
+    font-size: 1.4vw;
   }
   .nav-item.nav-link {
     font-size: 2vw;
   }
+  .navbar-dark .navbar-brand {
+    color: var(--text-orange);
+    font-size: 3vw;
+  }
+
 }
 
 .navbar-dark .navbar-brand:hover {
