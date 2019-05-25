@@ -33,7 +33,7 @@
               <a class="nav-item nav-link" href="{% url 'index' %}">About</a>
               <!-- url arguments above must match 'name' attribute in url.py -->
             </div>
-            <!-- Navbar Right Side -->
+            
             <div class="navbar-nav">
                 {% if user.is_authenticated %}
                   <img class="rounded-circle article-img" src="{{ user.profile.image.url }}" alt="user's profile picture" width="32" height="32">
