@@ -143,7 +143,7 @@ In order not to distract or detract from the images themselves, the layout and d
     - Snipcart - Empty cart on logout
     - Side panel - make tabs, show filtering options
     - Fix footer background - DONE
-    - Adjust navbar icon placement and font size
+    - Adjust navbar icon placement and font size - DONE
     - Implement filtering options
     - Fix Snipcart sometimes not finding product when scraping page
     - Make background black beneath image card text - DONE
