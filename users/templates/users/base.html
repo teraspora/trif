@@ -39,6 +39,7 @@
                   <img class="rounded-circle article-img" src="{{ user.profile.image.url }}" alt="user's profile picture" width="32" height="32">
 
                   <a class="nav-item nav-link" href="{% url 'profile' %}">{{ user.username }}'s Profile</a>
+                  <a class="nav-item nav-link" href="{% url 'likes' %}">My Likes</a>
                   <a class="nav-item nav-link snipcart-checkout" href="#">Checkout</a>
                   <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
                 {% else %}
