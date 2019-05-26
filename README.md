@@ -147,13 +147,13 @@ In order not to distract or detract from the images themselves, the layout and d
     - Implement filtering options
     - Fix Snipcart sometimes not finding product when scraping page
     - Make background black beneath image card text - DONE
-    - Fix disappearing 'Heart' icon on mobile
+    - Fix disappearing 'Heart' icon on mobile -DONE 
     - Finish this README.md, including acknowledgements
     - Write content for "About" page
     - Find best way to shrink profile pictures
     - Fix issue of Django admin static files being included in 'collectstatic'
     - Testing; maybe CT/CI with Travis
-    - Test responsiveness on mobile devices
+    - Test responsiveness on mobile devices -ONGOING
     - Code linting / validation
     - Run CSS through Autoprefixer
     
