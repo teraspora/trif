@@ -2,209 +2,200 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
-    <!-- Below css links copied from https://getbootstrap.com/docs/4.0/getting-started/introduction/ -->
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link href="https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css" type="text/css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"><link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+  <!-- Below css links copied from https://getbootstrap.com/docs/4.0/getting-started/introduction/ -->
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css" type="text/css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"><link rel="stylesheet" href="{% static 'css/style.css' %}">
 
-    {% if title %}
-        <title>Teraspora Fractals - {{ title }}</title>
-    {% else %}
-        <title>Teraspora Fractals</title>
-    {% endif %}
+  {% if title %}
+      <title>Teraspora Fractals - {{ title }}</title>
+  {% else %}
+      <title>Teraspora Fractals</title>
+  {% endif %}
 </head>
-<body>
-    <header class="site-header">
-      <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-        <div class="container">
-          <a class="navbar-brand mr-4" href="{% url 'index' %}">Teraspora Fractals</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarToggle">
-            <div class="navbar-nav mr-auto">
-              <a class="nav-item nav-link" href="{% url 'index' %}">Home</a>
-              <a class="nav-item nav-link" href="{% url 'about' %}">About</a>
-              <!-- url arguments above must match 'name' attribute in url.py -->
-            </div>
-            <!-- Navbar Right Side -->
-            <div class="navbar-nav">
-                {% if user.is_authenticated %}
-                  <img class="rounded-circle article-img" src="{{ user.profile.image.url }}" alt="user's profile picture" width="32" height="32">
 
-                  <a class="nav-item nav-link" href="{% url 'profile' %}">{{ user.username }}'s Profile</a>
-                  <a class="nav-item nav-link" href="{% url 'likes' %}">My Likes</a>
-                  <a class="nav-item nav-link snipcart-checkout" href="#">Checkout</a>
-                  <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
-                {% else %}
-                  <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
-                  <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
-                {% endif %}
-            </div>
+<body>
+  <header class="site-header">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand mr-4" href="{% url 'index' %}">Teraspora Fractals</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarToggle">
+          <div class="navbar-nav mr-auto">
+            <a class="nav-item nav-link" href="{% url 'index' %}">Home</a>
+            <a class="nav-item nav-link" href="{% url 'about' %}">About</a>
+            <!-- url arguments above must match 'name' attribute in url.py -->
+          </div>
+          <!-- Navbar Right Side -->
+          <div class="navbar-nav">
+              {% if user.is_authenticated %}
+                <img class="rounded-circle article-img" src="{{ user.profile.image.url }}" alt="user's profile picture" width="32" height="32">
+
+                <a class="nav-item nav-link" href="{% url 'profile' %}">{{ user.username }}'s Profile</a>
+                <a class="nav-item nav-link" href="{% url 'likes' %}">My Likes</a>
+                <a class="nav-item nav-link snipcart-checkout" href="#">Checkout</a>
+                <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+              {% else %}
+                <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+                <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+              {% endif %}
           </div>
         </div>
-      </nav>
-    </header>
+      </div>
+    </nav>
+  </header>
 <!-- END OF HEADER -->
 
 <!-- MAIN CONTENT STARTS HERE -->
-    <main role="main" class="container main-container">
-      <div class="row">
+  <main role="main" class="container main-container">
+    
+    <div class="row">
 <!-- MESSAGES IF ANY... -->
-        <div class="col-md-8">
-          {% if messages %}
-              {% for message in messages %}
-                <div class="alert alert-{{ message.tags }}">
-                    {{ message }}
-                </div>
-              {% endfor %}
-          {% endif %}
+      <div class="col-md-8">
+        {% if messages %}
+            {% for message in messages %}
+              <div class="alert alert-{{ message.tags }}">
+                  {{ message }}
+              </div>
+            {% endfor %}
+        {% endif %}
 <!-- SPECIFIC CONTENT -->
-          {% block content %}
-          {% endblock %}
-        </div>        
+        {% block content %}
+        {% endblock %}
       </div>
-
-
-<!-- Bootstrap code below from https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_pills_dynamic&stacked=h -->
-<div class="container">
-  <ul class="nav nav-pills">
-    <li class="active"><a data-toggle="pill" href="#info">Info</a></li>
-    <li><a data-toggle="pill" href="filter">Filters</a></li>
-  </ul>
-  
-  <div class="tab-content">
-    <div id="info" class="tab-pane fade in active">
-      <h3>Info</h3>
       <div class="col-md-4">
-          <div class="content-section">
-            <h3>What are they?</h3> 
-            <p class='text-muted'>
-              Teraspora fractals are images I generate by pouring equal measures of mathematics and computer programming into a pot, mixing well and cooking gently for a long time! ;)
-            </p>
-            <p>
-              They are the result of several years of developing a Java program which uses polynomial and trigonometric functions iterated over the complex plane to produce often highly detailed, high-resolution images (normally 14032 x 9920 pixels), which can consequently be printed even on large format media without having to be scaled up and thereby losing quality and in extreme cases becoming pixellated.
-            </p>
-            <p>
-              All prints, and the images on this site, are made from these 14032x9920 originals.   The images in the grid view are scaled down to 438 x 310 pixels, and the individual views show a higher-resolution version, 877 x 620 pixels.
-            </p>
-            <h6>tl;dr</h6>
-            <p>
-              Each image is generated by a combination of two complex functions iterated over the complex plane.   In most cases the functions are composed, while sometimes they're alternated and now and then combined by taking the arithmetic or geometric mean of the two at each iteration.
-            </p>
-            <p>
-              Most images are produced using somewhere between 32 and 1024 maximum iterations per pixel.   Most functions have a strong trigonometric element, using the real sine and cosine functions applied separately to the real and imaginary parts, in various combinations, as the complex trig functions tend to produce fragmented, jagged images.
-            </p>
-            <h6>
-              Select a function below to show just those images featuring that function...
-            </h6>
-            <div>
-              Some dropdown selectors to apply filtering here...
+        <div class="content-section">
+          <ul class="nav nav-tabs" id="sidebar" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="info-tab" data-toggle="tab" href="#info" role="tab" aria-controls="info" aria-selected="true">Info</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="filter-tab" data-toggle="tab" href="#filter" role="tab" aria-controls="filter" aria-selected="false">Filters</a>
+            </li>
+          </ul>
+
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div class="tab-pane active" id="info" role="tabpanel" aria-labelledby="info-tab">
+              <h3>What are they?</h3> 
+              <p class='text-muted'>
+                Teraspora fractals are images I generate by pouring equal measures of mathematics and computer programming into a pot, mixing well and cooking gently for a long time! ;)
+              </p>
+              <p>
+                They are the result of several years of developing a Java program which uses polynomial and trigonometric functions iterated over the complex plane to produce often highly detailed, high-resolution images (normally 14032 x 9920 pixels), which can consequently be printed even on large format media without having to be scaled up and thereby losing quality and in extreme cases becoming pixellated.
+              </p>
+              <p>
+                All prints, and the images on this site, are made from these 14032x9920 originals.   The images in the grid view are scaled down to 438 x 310 pixels, and the individual views show a higher-resolution version, 877 x 620 pixels.
+              </p>
+              <h6>tl;dr</h6>
+              <p>
+                Each image is generated by a combination of two complex functions iterated over the complex plane.   In most cases the functions are composed, while sometimes they're alternated and now and then combined by taking the arithmetic or geometric mean of the two at each iteration.
+              </p>
+              <p>
+                Most images are produced using somewhere between 32 and 1024 maximum iterations per pixel.   Most functions have a strong trigonometric element, using the real sine and cosine functions applied separately to the real and imaginary parts, in various combinations, as the complex trig functions tend to produce fragmented, jagged images.
+              </p>
+              <h6>
+                Select a function below to show just those images featuring that function...
+              </h6>
+              <div>
+                Some dropdown selectors to apply filtering here...
+              </div>
             </div>
-            </p>
+            
+            <div class="tab-pane" id="filter" role="tabpanel" aria-labelledby="filter-tab">
+              <h3>Filter controls go here</h3>
+            </div>
           </div>
         </div>
-    </div>
-    <div id="filter" class="tab-pane fade">
-      <h3>Filters</h3>
-      <p>Here will be various dropdowns and buttons to filter the queryset.</p>
-    </div>
-    </div>
-  </div>
-</div>
-
-
-
-
-
-
-
-    </main>
-
-    <footer class="footer mt-auto py-3">
-      <div class="container">
-        <div class="text-muted">
-          <ul class="social-icons">
-              <li>
-                <a target="_blank"
-                  href="https://twitter.com/teraspora" class="social-icon"> 
-                  <i class="fab fa-twitter"></i>
-                </a>
-                </li>
-              <li>
-                <a target="_blank"
-                  href="https://github.com/teraspora" class="social-icon"> 
-                  <i class="fab fa-github"></i>
-                </a>
-                </li>
-              <li>
-                <a target="_blank"
-                  href="https://www.linkedin.com/in/john-lynch-ballydehob/" class="social-icon"> <i class="fab fa-linkedin"></i></a>
-                </li>
-              <li>
-                <a target="_blank"
-                  href="https://gitlab.com/teraspora" class="social-icon"> 
-                  <i class="fab fa-gitlab"></i>
-                </a>
-                </li>
-              <li>
-                <a target="_blank"
-                  href="https://www.shadertoy.com/user/teraspora" class="social-icon">
-                  <i class="icon icon-st">
-                    <img src="{% static 'icons/shadert.jpg' %}" alt="Shadertoy icon">
-                  </i>
-                  </a>
-              </li>
-              <li>
-                <a target="_blank"
-                  href="https://wcveg.herokuapp.com/" class="social-icon">
-                  <i class="fas fa-leaf-maple"></i>
-                </a>
-              </li>
-              <li>
-                <a target="_blank"
-                  href="http://www.teraspora.net" class="social-icon">
-                  <i class="icon icon-st">
-                    <img src="{% static 'icons/polka.jpg' %}" alt="teraspora.net icon">
-                  </i>
-                </a>
-              </li>
-              
-          </ul>
-        </div>
       </div>
-    </footer>
-    <!-- Below script links copied from https://getbootstrap.com/docs/4.0/getting-started/introduction/ -->
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous">
-    </script>
+    </div>
 
-    <script 
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous">
-    </script>
+  </main>
 
-    <script
-      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"></script>
+  <footer class="footer mt-auto py-3">
+    <div class="container">
+      <div class="text-muted">
+        <ul class="social-icons">
+          <li>
+            <a target="_blank"
+              href="https://twitter.com/teraspora" class="social-icon"> 
+              <i class="fab fa-twitter"></i>
+            </a>
+            </li>
+          <li>
+            <a target="_blank"
+              href="https://github.com/teraspora" class="social-icon"> 
+              <i class="fab fa-github"></i>
+            </a>
+            </li>
+          <li>
+            <a target="_blank"
+              href="https://www.linkedin.com/in/john-lynch-ballydehob/" class="social-icon"> <i class="fab fa-linkedin"></i></a>
+            </li>
+          <li>
+            <a target="_blank"
+              href="https://gitlab.com/teraspora" class="social-icon"> 
+              <i class="fab fa-gitlab"></i>
+            </a>
+            </li>
+          <li>
+            <a target="_blank"
+              href="https://www.shadertoy.com/user/teraspora" class="social-icon">
+              <i class="icon icon-st">
+                <img src="{% static 'icons/shadert.jpg' %}" alt="Shadertoy icon">
+              </i>
+              </a>
+          </li>
+          <li>
+            <a target="_blank"
+              href="https://wcveg.herokuapp.com/" class="social-icon">
+              <i class="fas fa-leaf-maple"></i>
+            </a>
+          </li>
+          <li>
+            <a target="_blank"
+              href="http://www.teraspora.net" class="social-icon">
+              <i class="icon icon-st">
+                <img src="{% static 'icons/polka.jpg' %}" alt="teraspora.net icon">
+              </i>
+            </a>
+          </li>            
+        </ul>
+      </div>
+    </div>
+  </footer>
 
-    <script
-      src="https://cdn.snipcart.com/scripts/2.0/snipcart.js"
-      id="snipcart"
-      data-api-key="OWQ2ZDhkODMtNDhkOC00NmNhLTlmODYtNGYyNjk5MDYzZTIwNjM2OTM5MTA0OTA5NjE1Nzg0">
-    </script>
+  <!-- Below script links copied from https://getbootstrap.com/docs/4.0/getting-started/introduction/ -->
+  <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous">
+  </script>
 
-  </body>
+  <script 
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous">
+  </script>
+
+  <script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+  <script
+    src="https://cdn.snipcart.com/scripts/2.0/snipcart.js"
+    id="snipcart"
+    data-api-key="OWQ2ZDhkODMtNDhkOC00NmNhLTlmODYtNGYyNjk5MDYzZTIwNjM2OTM5MTA0OTA5NjE1Nzg0">
+  </script>
+
+</body>
 </html>
