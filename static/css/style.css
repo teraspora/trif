@@ -227,3 +227,7 @@ ul.social-icons {
     color: var(--dark-blue);
     font-size: 1.5vmax;
 }
+
+#info > *:nth-child(odd) {
+    color: var(--text-orange);
+}
