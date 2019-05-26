@@ -7,6 +7,10 @@
 
         <h1>Teraspora Fractals</h1>
         
+        {% if likes %}
+          <h3>Liked Images</h3>
+        {% endif %}
+
         <div class="row">
   
           {% for img in image_list %}

@@ -37,10 +37,30 @@ class ImageListView(ListView):
         context['STATIC_SMALL_IMAGE_DIR'] = STATIC_SMALL_IMAGE_DIR
         return context
 
+class LikedImageListView(ListView):
+    """ List view of all images. """
+    paginate_by = 30
+    template_name = 'fract/index.html'
+    context_object_name = 'image_list'
+    ordering = 'id'      # random ordering
+
+    def get_queryset(self):
+        queryset = self.request.user.profile.liked_images.all()
+        return queryset
+
+    def get_context_data(self, **kwargs):
+        """
+        Get the context and append the STATIC_IMAGE_DIR to it, so we can 
+        use this in the template for the image source path.
+        """
+        context = super(LikedImageListView, self).get_context_data(**kwargs)
+        context['STATIC_SMALL_IMAGE_DIR'] = STATIC_SMALL_IMAGE_DIR
+        context['likes'] = True
+        return context
+
 class ImageDetailView(DetailView):
     """ Detail view of a single image """
     model = Image
-
     def get_context_data(self, **kwargs):
         """
         Get the context and append the STATIC_IMAGE_DIR to it, so we can 
@@ -50,6 +70,6 @@ class ImageDetailView(DetailView):
         context['STATIC_LARGE_IMAGE_DIR'] = STATIC_LARGE_IMAGE_DIR
         return context
 
-# OLD view-function, replaced by class-based view below
 def about(request):
+    """ Return the 'About' page. """
     return render(request, 'fract/about.html')
