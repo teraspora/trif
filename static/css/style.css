@@ -8,7 +8,7 @@ Code: https://github.com/CoreyMSchafer/code_snippets/blob/master/Django_Blog/sni
 body {
     --dark-blue: #050220;
     --text-yellow: #f1bf32;
-    --text-orange: #ff9800;
+    --text-orange: #ff7400;
     --light-blue: #024096;
     --hover-colour: #ff1b3a;
     --narrow-border-colour: #ffffff;
@@ -220,4 +220,10 @@ ul.social-icons {
 .icon-st img {
     height: 2vw;
     max-width: 100%;    
+}
+
+.nav-link.active {
+    background-color: var(--text-orange);
+    color: var(--dark-blue);
+    font-size: 1.5vmax;
 }
