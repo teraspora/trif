@@ -68,8 +68,21 @@
 <!-- SPECIFIC CONTENT -->
           {% block content %}
           {% endblock %}
-        </div>
-        <div class="col-md-4">
+        </div>        
+      </div>
+
+
+<!-- Bootstrap code below from https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_pills_dynamic&stacked=h -->
+<div class="container">
+  <ul class="nav nav-pills">
+    <li class="active"><a data-toggle="pill" href="#info">Info</a></li>
+    <li><a data-toggle="pill" href="filter">Filters</a></li>
+  </ul>
+  
+  <div class="tab-content">
+    <div id="info" class="tab-pane fade in active">
+      <h3>Info</h3>
+      <div class="col-md-4">
           <div class="content-section">
             <h3>What are they?</h3> 
             <p class='text-muted'>
@@ -97,8 +110,23 @@
             </p>
           </div>
         </div>
-      </div>
+    </div>
+    <div id="filter" class="tab-pane fade">
+      <h3>Filters</h3>
+      <p>Here will be various dropdowns and buttons to filter the queryset.</p>
+    </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
     </main>
+
     <footer class="footer mt-auto py-3">
       <div class="container">
         <div class="text-muted">
