@@ -22,7 +22,14 @@
                         data-item-price="35.00"
                         data-item-description="Fractal Print {{ object.id }}">
                             <span class="label label-primary">Buy! A5 only €45</span>
-                    </button>                    
+                    </button> 
+                    <button class="btn btn-primary img-details">Details</button>
+                    <details>
+                        <p>Function: {{ object.params.func }}</p>
+                        <p>Alt-function: {{ object.params.alt_func }}</p>
+                        <p>Power: {{ object.params.power }}</p>
+                        <p>Type: {{ object.params.type }}</p>
+                    </details>
                     <a class="btn btn-warning btn-sm float-right heart" href="{% url 'add_like' img_id=object.id %}"><i class="fas fa-heart fa_custom"></i></a >
                 {% else %}
                     <a href="{% url 'login' %}" class="btn btn-primary">Log in to buy...</a>
