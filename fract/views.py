@@ -69,7 +69,8 @@ class FilteredImageListView(ListView):
     ordering = 'id'      # random ordering
 
     def get_queryset(self):
-        queryset = Image.objects.filter()
+        # queryset = Image.objects.filter()
+        queryset = Image.objects.all()
         return queryset
 
     def get_context_data(self, **kwargs):
@@ -80,7 +81,7 @@ class FilteredImageListView(ListView):
         context = super(FilteredImageListView, self).get_context_data(**kwargs)
         context['STATIC_SMALL_IMAGE_DIR'] = STATIC_SMALL_IMAGE_DIR
         return context
-
+        
 
 class ImageDetailView(DetailView):
     """ Detail view of a single image """
@@ -98,7 +99,7 @@ def about(request):
     """ Return the 'About' page. """
     return render(request, 'fract/about.html')
 
-def images_filtered(request):
-    """ Return the list of images, filtered by the specified criteria. """
-    # Currently a stub
-    return render(request, 'fract/about.html')    
+# def images_filtered(request):
+#     """ Return the list of images, filtered by the specified criteria. """
+#     # Currently a stub
+#     return render(request, 'fract/about.html')    

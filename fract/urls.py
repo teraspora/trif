@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import ImageListView, ImageDetailView, LikedImageListView
+from .views import ImageListView, ImageDetailView, LikedImageListView, FilteredImageListView
 from . import views
 from users import views as user_views
 
@@ -10,5 +10,5 @@ urlpatterns = [
     path('add_like/<int:img_id>/', user_views.add_like, name='add_like'),
     path('likes', LikedImageListView.as_view(), name='likes'),
     path('about/', views.about, name='about'),
-    path('images_filtered/', views.images_filtered, name='images_filtered'),        
+    path('images_filtered/', FilteredImageListView.as_view(), name='images_filtered'),        
 ]   
