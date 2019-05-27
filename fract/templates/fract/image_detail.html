@@ -13,8 +13,6 @@
             <img class="card-img-top img-fluid fractal" src="{% static STATIC_LARGE_IMAGE_DIR %}{{ object.name_large }}" alt="fractal image">
             <div class="card-body">
               <p class="card-text">
-                <span class="label label-info">Image&nbsp; {{ object.id }} (func.&nbsp;{{ object.params.func }})</span>
-                
                 {% if user.is_authenticated %}
                     <button
                         class="btn btn-primary snipcart-add-item"
@@ -25,6 +23,8 @@
                         data-item-description="Fractal Print {{ object.id }}">
                             <span class="label label-primary">Buy! A5 only €45</span>
                     </button>
+                    <span class="label label-info">Image&nbsp; {{ object.id }}</span>
+                    
                     <a class="btn btn-warning btn-sm float-right heart" href="{% url 'add_like' img_id=object.id %}"><i class="fas fa-heart fa_custom"></i></a >
                 {% else %}
                     <a href="{% url 'login' %}" class="btn btn-primary">Log in to buy...</a>
