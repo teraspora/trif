@@ -140,30 +140,32 @@ In order not to distract or detract from the images themselves, the layout and d
 * Implement code to let an authenticated user 'like' an image, and display the number of likes for each image
 * Tweak styling and fonts
 * Make sidebar into tabbed panel, 2nd tab displaying a form for filtering
-
+* Successfully implement views filtered by image parameters, by using a lambda in the override of 'get_queryset()' in class FilteredImageListView in fract/views.py
+*
 
 
 ### Final Stages: To Do:
     - Snipcart - Empty cart on logout
-    - Side panel - make tabs, show filtering options
-    - Fix footer background - DONE
-    - Adjust navbar icon placement and font size - DONE
-    - Implement filtering options
     - Fix Snipcart sometimes not finding product when scraping page
-    - Make background black beneath image card text - DONE
-    - Fix disappearing 'Heart' icon on mobile -DONE 
     - Finish this README.md, including acknowledgements
     - Write content for "About" page
+    - Add 'Details' popup or toast to show image parameters in detail view
+    - Side panel - make tabs, show filtering options - DONE
+    - Fix footer background - DONE
+    - Adjust navbar icon placement and font size - DONE
+    - Implement filtering options - DONE
+    - Make background black beneath image card text - DONE
+    - Fix disappearing 'Heart' icon on mobile -DONE 
     - Find best way to shrink profile pictures
     - Fix issue of Django admin static files being included in 'collectstatic'
     - Testing; maybe CT/CI with Travis
-    - Test responsiveness on mobile devices -ONGOING
     - Code linting / validation
     - Run CSS through Autoprefixer
+    - Test responsiveness on mobile devices -ONGOING
     
 ### Features left to implement in future versions:
     - Multiple sizes of prints
-    - Find way to send a 'Like' to the server with Javascript rather than reloading the page
+    - Send a 'Like' to the server with Javascript rather than reloading the page, I guess with an AJAX request
     - Store a user's cart in case s/he logs out or clears browser cache
     - Improve styling and find a better way to present the images, perhaps with a higher-resolution version (perhaps 2806 x 1984) for users prepared to wait, and a smaller version for list view on mobile
     - Further customise the Snipcart workflow 
