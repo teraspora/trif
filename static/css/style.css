@@ -111,6 +111,18 @@ img.fractal:hover {
     text-align: center;
 }
 
+.card-body.about-body {
+    border-radius: 32px;
+}
+
+.card-body.about-body > h3 {
+    color: var(--text-orange)
+}
+
+.about-card {
+    background-color: var(--dark-blue);
+}
+
 nav {
     border-bottom: 1px solid var(--narrow-border-colour);
 }

@@ -3,18 +3,40 @@
 
 {% block content %}
 
-    <div class="content-section">
+<div class="content-section">
 
-        <h1>Teraspora Fractals</h1>
-        
-        <div class="row">
-  
-          The About content goes here!
-
-          
-
-        </div>
-        
+  <h1>Teraspora Fractals</h1>
+      
+  <div class="row">
+    <div class="card about-card">
+      <div class="card-body about-body">
+        <h3>
+          About me, this website and these images...
+        </h3>
+        <p>
+          Hi.   I'm John Lynch.   I love coding, playing with mathematics, and using both of these to create digital art.   I also love playing music (piano, sax, tin whistles), growing vegetables, trees and even a few flowers; cooking and making chutneys, marmalades etc.; and enjoying good coffee, preferably freshly-ground and ideally not long roasted!
+        </p>
+        <p>
+          Back in the day, I did a mathematics degree at Hull University, since which I've worked with computers for many years in a variety of roles, mostly involving operations and technical support, as well as running a PC factory, but over the past few years my early passion for coding has, delightfully, returned.   And I've been using it, and my mathematical knowledge, to create digital art, mainly using Java and Clojure, but lately also in GLSL, directly programming the GPU.
+        </p>
+        <p>   All this stuff is quite specialised, though, so in January 2018 I enrolled on a <a target="_blank" href="https://courses.codeinstitute.net/program/FullstackWebDeveloper">Code Institute course</a> to learn all the technologies required to develop both the front- and back-ends of websites and web applications, and to understand all the necessary wiring that serves to knit all these technologies together.</p>
+        <p>
+          This website is the culmination of over a year of study online.   It is my fifth and final "Milestone Project" for the Code Institute course.   It is built with <a target="_blank" href="https://www.djangoproject.com/">Django 2.2</a> and hosted at <a target="_blank" href="https://ztrif.herokuapp.com/">Heroku</a>. It uses a <a target="_blank" href="https://www.postgresql.org/">PostgrSQL</a> database also hosted at Heroku to store image data and user profile data.   The images themselves are stored in an <a target="_blank" href="https://aws.amazon.com/s3/">Amazon S3 bucket</a>, along with other static files.
+        </p>
+        <p>
+          So whence the images?   Well, from an early age I have loved patterns.
+        </p>
+          <p>The images themselves are the result of several years of developing and refining a Java program which generates "Escape-time Fractals" by iterating functions over the Complex plane.   I found that by creating Complex functions which apply real trigonometric functions separately to the real and imaginary parts, and concocting more and more elaborate variations, composing functions, adding pre-transformations, varying a whole range of parameters and varying the algorithms I use to map iteration counts to colours, I could create some very interesting images indeed! 
+        </p>
+        <p>
+          For more information see <a href="https://www.teraspora.net/fractals.html">this short article</a> on my website <a href="https://www.teraspora.net/index.html">www.teraspora.net</a>
+        </p>
+        <p>
+          If you're interested in hiring me as a software developer, please contact me at the (obfuscated) address johnlynch DOT 32768 AT gmail DOT com.
+        </p>
+      </div>
     </div>
+  </div>
+</div>
 
 {% endblock content %}
