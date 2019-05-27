@@ -17,17 +17,19 @@ def get_image_params(image_name, res):
   p = re.compile(r'(?P<type>[JM])(?P<power>\d+)f(?P<func>\d+)(?P<mode>[A-Z]+)(?P<alt_func>\d+)(?P<pretrans>\-pre\d+)?(?P<xparams>[a-z\-]*)$')
   m = p.search(param_str)
   prex = m.group('pretrans')
-
+  iteration_type = m.group('type')
+  full_flavour = "Mandelbrot" if iteration_type == "M" else "Julia"
   return { 
     'image_id': image_id,
     'size': res, 
-    'type': m.group('type'), 
+    'type': iteration_type, 
     'power': m.group('power'), 
     'func': m.group('func'), 
     'alt_func': m.group('alt_func'), 
     'mode': m.group('mode'), 
     'pretrans': '' if prex is None else prex[4:] ,
-    'xparams': list(filter(None, m.group('xparams').split('-'))), 
+    'xparams': list(filter(None, m.group('xparams').split('-'))),
+    'full_flavour': full_flavour, 
   }
 
 if __name__ == "__main__":
