@@ -54,7 +54,8 @@ ul {
     background: var(--dark-blue);
     padding: 5px 21px;
     border-radius: 3px;
-    margin-bottom: 20px;
+    margin-bottom: 3vh;
+    padding-top: 3vh;
 }
 
 img.fractal {
