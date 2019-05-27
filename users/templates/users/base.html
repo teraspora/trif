@@ -114,7 +114,7 @@
               <h3>Filter controls go here</h3>
               <form action="{% url 'images_filtered' %}" method="get" target="_blank">
                 {% csrf_token %}
-                {% filter_form %}
+                {{ filter_form }}
                 
                 <input type="submit" value="Submit">
               </form>

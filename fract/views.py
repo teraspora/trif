@@ -98,10 +98,7 @@ def about(request):
     """ Return the 'About' page. """
     return render(request, 'fract/about.html')
 
-
-
-
-
-
-
-    ImageFilterForm
+def images_filtered(request):
+    """ Return the list of images, filtered by the specified criteria. """
+    # Currently a stub
+    return render(request, 'fract/about.html')    
