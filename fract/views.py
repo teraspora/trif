@@ -90,6 +90,7 @@ class FilteredImageListView(ListView):
         """
         context = super(FilteredImageListView, self).get_context_data(**kwargs)
         context['STATIC_SMALL_IMAGE_DIR'] = STATIC_SMALL_IMAGE_DIR
+        context['filtered'] = True
         return context
 
 
