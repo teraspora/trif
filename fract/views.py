@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 from .models import Image
+import functools
 
 # ------- only run this to initially populate database with Image objects
 if len(Image.objects.all()) == 0:
@@ -66,11 +67,20 @@ class FilteredImageListView(ListView):
     paginate_by = 30
     template_name = 'fract/index.html'  # re-use "list all" template for '/likes'
     context_object_name = 'image_list'
-    ordering = 'id'      # random ordering
+    ordering = 'id'
 
     def get_queryset(self):
-        # queryset = Image.objects.filter()
-        queryset = Image.objects.all()
+        EMPTY = ''
+        func = self.request.GET.get("func")
+        alt_func = self.request.GET.get("alt_func")
+        exponent = self.request.GET.get("exponent")
+        flavour = self.request.GET.get("flavour")
+        queryset = list(filter(lambda img:
+            (func == EMPTY or img.params()['func'] == func) and
+            (alt_func == EMPTY or img.params()['alt_func'] == alt_func) and
+            (exponent == EMPTY or img.params()['power'] == exponent) and
+            (flavour == EMPTY or flavour == "*" or img.params()['type'] == flavour),
+          Image.objects.all()))
         return queryset
 
     def get_context_data(self, **kwargs):
@@ -81,7 +91,7 @@ class FilteredImageListView(ListView):
         context = super(FilteredImageListView, self).get_context_data(**kwargs)
         context['STATIC_SMALL_IMAGE_DIR'] = STATIC_SMALL_IMAGE_DIR
         return context
-        
+
 
 class ImageDetailView(DetailView):
     """ Detail view of a single image """
