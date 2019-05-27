@@ -28,7 +28,7 @@
                         <p>Function: {{ object.params.func }}</p>
                         <p>Alt-function: {{ object.params.alt_func }}</p>
                         <p>Power: {{ object.params.power }}</p>
-                        <p>Type: {{ object.params.type }}</p>
+                        <p>Type: {{ object.params.full_flavour }}</p>
                     </details>
                     <a class="btn btn-warning btn-sm float-right heart" href="{% url 'add_like' img_id=object.id %}"><i class="fas fa-heart fa_custom"></i></a >
                 {% else %}
