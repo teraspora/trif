@@ -12,7 +12,8 @@ class ImageFilterForm(forms.Form):
     g_min = min([int(img.params()['alt_func']) for img in all_imgs])
     g_max = max([int(img.params()['alt_func']) for img in all_imgs])
 
-    func = forms.IntegerField(label='Function', min_value=f_min, max_value=f_max)
-    alt_func = forms.IntegerField(label='Alt-function', min_value=g_min, max_value=g_max)   
-    exponent = forms.IntegerField(label='Exponent', min_value=1, max_value=power_max)
-    flavour = forms.ChoiceField(label='Type', choices=FLAVOURS)
+    func = forms.IntegerField(label='Function', min_value=f_min, max_value=f_max, required=False)
+    alt_func = forms.IntegerField(label='Alt-function', min_value=g_min, max_value=g_max, required=False)   
+    exponent = forms.IntegerField(label='Exponent', min_value=1, max_value=power_max, required=False)
+    flavour = forms.ChoiceField(label='Type', choices=FLAVOURS, required=False)
+    
