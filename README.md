@@ -156,7 +156,6 @@ In order not to distract or detract from the images themselves, the layout and d
     - Implement filtering options - DONE
     - Make background black beneath image card text - DONE
     - Fix disappearing 'Heart' icon on mobile -DONE 
-    - Find best way to shrink profile pictures
     - Fix issue of Django admin static files being included in 'collectstatic'
     - Testing; maybe CT/CI with Travis
     - Code linting / validation
@@ -164,6 +163,7 @@ In order not to distract or detract from the images themselves, the layout and d
     - Test responsiveness on mobile devices -ONGOING
     
 ### Features left to implement in future versions:
+    - Find best way to shrink profile pictures, to obviate storing and serving too-large user-uploaded images
     - Multiple sizes of prints
     - Send a 'Like' to the server with Javascript rather than reloading the page, I guess with an AJAX request
     - Store a user's cart in case s/he logs out or clears browser cache
