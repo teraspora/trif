@@ -111,10 +111,10 @@
             </div>
             
             <div class="tab-pane" id="filter" role="tabpanel" aria-labelledby="filter-tab">
-              <h3>Filter controls go here</h3>
+              <h5>You can filter the images displayed by several parameters...</h5>
               <form action="{% url 'images_filtered' %}" method="get" target="_blank">
                 {% csrf_token %}
-                {{ filter_form }}
+                {{ filter_form.as_p }}
                 
                 <input type="submit" value="Submit">
               </form>

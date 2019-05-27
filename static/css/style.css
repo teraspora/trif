@@ -10,6 +10,7 @@ body {
     --text-yellow: #f1bf32;
     --text-orange: #ff7400;
     --light-blue: #024096;
+    --pale-blue: #66a3ff;
     --hover-colour: #ff1b3a;
     --narrow-border-colour: #ffffff;
     --bg-very-dark: #000008;
@@ -230,4 +231,9 @@ ul.social-icons {
 
 #info > *:nth-child(odd) {
     color: var(--text-orange);
+}
+
+input, select {
+    background-color: var(--pale-blue);
+    color: var(--text-orange);    
 }
