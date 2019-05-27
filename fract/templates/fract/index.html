@@ -6,7 +6,11 @@
     <div class="content-section">
 
         {% if likes %}
-          <h3 class="text-center">Liked Images</h3>
+          <h5>Liked Images</h5>
+        {% endif %}
+
+        {% if filtered %}
+          <h5>Filtered Images</h5>
         {% endif %}
 
         <div class="row">
