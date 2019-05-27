@@ -20,6 +20,7 @@ STATIC_LARGE_IMAGE_DIR = 'images/zarg877/'
 #     }
 #     return render(request, 'fract/index.html', context)
 
+
 class ImageListView(ListView):
     """ List view of all images. """
     model = Image
@@ -37,10 +38,11 @@ class ImageListView(ListView):
         context['STATIC_SMALL_IMAGE_DIR'] = STATIC_SMALL_IMAGE_DIR
         return context
 
+
 class LikedImageListView(ListView):
     """ List view of all images. """
     paginate_by = 30
-    template_name = 'fract/index.html'
+    template_name = 'fract/index.html'  # re-use "list all" template for '/likes'
     context_object_name = 'image_list'
     ordering = 'id'      # random ordering
 
@@ -58,6 +60,28 @@ class LikedImageListView(ListView):
         context['likes'] = True
         return context
 
+
+class FilteredImageListView(ListView):
+    """ List view of all images. """
+    paginate_by = 30
+    template_name = 'fract/index.html'  # re-use "list all" template for '/likes'
+    context_object_name = 'image_list'
+    ordering = 'id'      # random ordering
+
+    def get_queryset(self):
+        queryset = Image.objects.filter()
+        return queryset
+
+    def get_context_data(self, **kwargs):
+        """
+        Get the context and append the STATIC_IMAGE_DIR to it, so we can 
+        use this in the template for the image source path.
+        """
+        context = super(FilteredImageListView, self).get_context_data(**kwargs)
+        context['STATIC_SMALL_IMAGE_DIR'] = STATIC_SMALL_IMAGE_DIR
+        return context
+
+
 class ImageDetailView(DetailView):
     """ Detail view of a single image """
     model = Image
@@ -73,3 +97,11 @@ class ImageDetailView(DetailView):
 def about(request):
     """ Return the 'About' page. """
     return render(request, 'fract/about.html')
+
+
+
+
+
+
+
+    ImageFilterForm
