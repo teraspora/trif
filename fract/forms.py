@@ -14,17 +14,5 @@ class ImageFilterForm(forms.Form):
 
     func = forms.IntegerField(label='Function', min_value=f_min, max_value=f_max)
     alt_func = forms.IntegerField(label='Alt-function', min_value=g_min, max_value=g_max)   
-    func = forms.IntegerField(label='Exponent', min_value=1, max_value=power_max)
+    exponent = forms.IntegerField(label='Exponent', min_value=1, max_value=power_max)
     flavour = forms.ChoiceField(label='Type', choices=FLAVOURS)
-
-# sample code for reference: remove before submission/production
-#     name = forms.CharField(max_length=100)
-#     title = forms.CharField(
-#         max_length=3,
-#         widget=forms.Select(choices=TITLE_CHOICES),
-#     )
-#     birth_date = forms.DateField(required=False)
-
-# class BookForm(forms.Form):
-#     name = forms.CharField(max_length=100)
-#     authors = forms.ModelMultipleChoiceField(queryset=Author.objects.all())
