@@ -138,8 +138,12 @@ In order not to distract or detract from the images themselves, the layout and d
 * When mostly working, merge into master and deploy
 * Added and styled footer with social media icons
 * Implement code to let an authenticated user 'like' an image, and display the number of likes for each image
-* 
-* Final Stages: To Do:
+* Tweak styling and fonts
+* Make sidebar into tabbed panel, 2nd tab displaying a form for filtering
+
+
+
+### Final Stages: To Do:
     - Snipcart - Empty cart on logout
     - Side panel - make tabs, show filtering options
     - Fix footer background - DONE
@@ -157,7 +161,7 @@ In order not to distract or detract from the images themselves, the layout and d
     - Code linting / validation
     - Run CSS through Autoprefixer
     
-* Features left to implement in future versions:
+### Features left to implement in future versions:
     - Multiple sizes of prints
     - Find way to send a 'Like' to the server with Javascript rather than reloading the page
     - Store a user's cart in case s/he logs out or clears browser cache
