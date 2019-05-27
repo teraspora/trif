@@ -96,13 +96,19 @@ img.fractal:hover {
 .card {
     background-color: var(--bg-very-dark);
 }
+
 .card-img-top {
     border: 1px solid var(--narrow-border-colour);
 }
+
 .card-body {
     background-color: var(--bg-very-dark);
     margin-top: 0.6vh;
     border: 1px solid var(--narrow-border-colour);
+}
+
+.card-text {
+    text-align: center;
 }
 
 nav {
