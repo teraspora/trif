@@ -150,8 +150,8 @@ In order not to distract or detract from the images themselves, the layout and d
 * Make sidebar into tabbed panel, 2nd tab displaying a form for filtering
 * Successfully implement views filtered by image parameters, by using a lambda in the override of 'get_queryset()' in class FilteredImageListView in fract/views.py
 * Write content for 'About' page and style it
-
-
+* Step by step, fix the various issues in the below 'To Do' list
+* Reasonably comprehensive testing: see the Testing" section above.
 
 ### Final Stages: To Do:
     - Snipcart - Empty cart on logout
@@ -160,7 +160,7 @@ In order not to distract or detract from the images themselves, the layout and d
     - Fix issue of Django admin static files being included in 'collectstatic'
     - Add username to 'Liked Images' header
     - Add 'now hosted at...' to About page 1st milestone link
-    - Style pagination buttons and label
+    - Style pagination buttons and label - DONE e605b7c 186979b
     - Fix 'Filters' link at bottom of Info panel not working - DONE (removed link, changed text)
     - Repeat testing in Firefox and Opera
     - Redirect user back to previous page upon login (if straightforward) - DONE f14c651
@@ -174,7 +174,7 @@ In order not to distract or detract from the images themselves, the layout and d
     - Implement filtering options - DONE 73542c2
     - Make background black beneath image card text - DONE 2a5c562
     - Fix disappearing 'Heart' icon on mobile - NOT AN ISSUE, only when not logged in, by intention! 
-    - Testing; maybe CT/CI with Travis
+    - Testing - ONGOING
     - Code linting / validation - DONE
     - Run CSS through Autoprefixer - DONE f031628
     - Test responsiveness on mobile devices -ONGOING
@@ -192,17 +192,29 @@ In order not to distract or detract from the images themselves, the layout and d
 
 ## Testing
 
-* The project was tested manually at all stages, both on my local machine and on the Heroku dynos:
-    - by testing navigation from page to page
-    - by logging in and out
-    - by registering new users
-    - by clicking 'Forgot password' and checking the reset email arrives and the link it supplies works
-    - by changing things in the admin panel and trying to break stuff (e.g. deleting a user and then checking the profile is removed by CASCADE)
-    - by testing the 'Like' buttons for images, with different users, and checking the counter is incremented as expected
-    - by testing the filtering options and checking the result sets in the shell
+* The project was tested manually at all stages, both on my local machine and on the Heroku dynos.   In this way many bugs were uncovered and subsequently fixed.
 
-* In this way many bugs were uncovered and subsequently fixed.
+### Browsers Tested:
+    
+    - Firefox Quantum 67.0 on Ubuntu 18
+    - Chromium 73 on Ubuntu 18
+    - Chrome 74 on Android
+    - Android Browser 7.1.2 org.lineageos.jelly on small old Motorola phone
 
+### Functionality Tested:
+
+    - Check logging in and out, views change accordingly
+    - Check registering as new user and logging in and out and in again
+    - Check all links in navbar and footer, confirm opening in new tabs
+    - Check all external links in 'About' page, confirm opening in new tabs
+    - Click 'Forgot password' and confirm email link
+    - Add likes with different users, check Likes total updated appropriately
+    - Check upload and display of user profile pictures
+    - Check switching between pages
+    - Check switching between tabs in sidebar
+    - Check display is reasonable with reasonable resizings of browser window
+    - Check that filtering works by confirming in the Python shell
+    - Change things in the admin panel and try to break stuff (e.g. delete a user and then check profile removed by CASCADE)
 
 ## Deployment
 
