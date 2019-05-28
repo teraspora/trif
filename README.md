@@ -1,5 +1,7 @@
 # Trif
 
+## Project deployed to [ztrif.herokuapp.com][15].
+
 ## Overview
 
 Trif is a web application which classifies and offers for sale high-definition prints of abstract fractal images created in Java using a plethora of mathematical functions iterated over the complex plane.
@@ -158,8 +160,8 @@ In order not to distract or detract from the images themselves, the layout and d
     - Fix Snipcart sometimes not finding product when scraping page
     - Finish this README.md, including acknowledgements and deployment guide
     - Fix issue of Django admin static files being included in 'collectstatic'
-    - Add username to 'Liked Images' header
-    - Add 'now hosted at...' to About page 1st milestone link
+    - Add username to 'Liked Images' header - DONE bb2fe87
+    - Add 'now hosted at...' to About page 1st milestone link - DONE 3dfc478
     - Style pagination buttons and label - DONE e605b7c 186979b
     - Fix 'Filters' link at bottom of Info panel not working - DONE (removed link, changed text)
     - Repeat testing in Firefox and Opera
@@ -188,7 +190,7 @@ In order not to distract or detract from the images themselves, the layout and d
     - Further customise the Snipcart workflow 
     - Store orders in the user profile, display for the user's convenience, and think how to use for marketing purposes
     - Add Java function definitions to database so we can display as image detail for geeks
-    - Test in Safari, Edge
+    - Test in Opera, Safari, Edge
 
 ## Testing
 
@@ -225,6 +227,53 @@ In order not to distract or detract from the images themselves, the layout and d
 - The project uses [Snipcart][7] to handle user purchase orders, shopping cart, payments and backend notifications
 - The deployed site can be accessed with a web browser at [Teraspora Fractals][15]
 
+## Ongoing Issues
+
+* When I run `python3 manage.py collectstatic`, Django picks up my static files ok and uploads them to S3, but it also picks up a static directory inside my virtual environment, `/lib/python3.7/site-packages/django/contrib/admin/static` and uploads nearly 100 files to my S3 bucket.   Evidently Django goes looking for them there, too, because if I delete them then the Django Admin UI is unstyled.   My workaround has been to change the basename of this directory to `static_temp`, unless I need to use the Admin interface, in which case I change it back.   I set up aliases to do this quickly.   I am conscious, though, that it's a workaround, if not a fudge, but no-one has been able to discern the cause and I have not found an answer online, though it 'must' be something to do with the interaction of my settings in `settings.py`.   If, alternatively, I run the `collectstatic` function in the Heroku CLI, Django finds static folders in `.heroku/` instead!   So I am keen to learn more about how Django handles static files so that I can resolve it soon.
+
+* A user can upload a large profile picture.   Storing and serving such a file is unneccessary since a profile picture only needs to be 300x300 pixels at most.   So I want to shrink it before saving it.   I have tried this by overriding the `post_save` method of `django.db.models.signals` and by using Pillow to shrink it.   I can get the shrink code working locally but ran into a number of issues implementing it properly, and my mentor assured me it would not lose me marks!
+
+* I'm not totally happy about reloading the page when a user clicks 'Like' on an image.   I want to re-implement it with an asynchronous AJAX request so the user is not disturbed by a page reload.   Again, though, my mentor opined that it would not lose me marks to leave it thus.
+
+* Snipcart functionality is not working properly every time.   Some orders work, others fail when Snipcart tries to crawl the page.
+
+I cannot get Snipcart to recognise my products when it back-crawls my page.  I suspect it's to do with `data-item-url` or `data-item-name`.
+
+I have tried with both a relative URL - occasionally it worked - and an absolute URL - doesn't seem to work at all.
+
+Each time the error is the same: when user clicks "Place Order", there is a wait of 4 or 5 seconds, the a red bar appears with the message
+"We have not been able to validate your order. Looks like some product prices might have changed since you added them to the cart. Please review your order and try again."
+
+In the cart, the following message appears:
+
+"FRACTAL-PRINT-896
+Fractal Print 896
+
+It looks like this item is not available anymore. You may need to contact the merchant to get this resolved as it may be a configuration problem. By continuing this item will be removed from your cart."
+
+If I click "Accept Changes and Continue", or close the cart popup, the cart is emptied and the order is not processed.
+
+My "Buy" button is on the page
+https://ztrif.herokuapp.com/image/896
+
+and looks like this, with the absolute URL
+```
+<button
+    class="btn btn-primary snipcart-add-item text-center"
+    data-item-id="896"
+    data-item-name="fractal-print-896"
+    data-item-url="https://ztrif.herokuapp.com/image/896/"
+    data-item-price="45.00"
+    data-item-description="Fractal Print 896">
+        <span class="label label-primary">Buy! A5 only €45</span>
+</button>
+```
+
+One extra thing I notice, which may be relevant, is that after the cart is then closed, the URL in the browser's address bar changes to "https://ztrif.herokuapp.com/image/896/#!/", with an extra `#!/` on the end.   I need to investigate what's causing this and if it's the cause of the above-described bug.
+
+* Finally, I need to clear the user's cart when they log out.
+
+* I have contacted Snipcart about the above and await an answer.
 
 
 ## Acknowledgements
