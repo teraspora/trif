@@ -42,7 +42,8 @@
                 <a class="nav-item nav-link" href="{% url 'profile' %}">{{ user.username }}'s Profile</a>
                 <a class="nav-item nav-link" href="{% url 'likes' %}">My Likes</a>
                 <a class="nav-item nav-link snipcart-checkout" href="#">Checkout</a>
-                <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+                <a onclick="console.log(`****** Testing ******`);" 
+                   class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
               {% else %}
                 <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
                 <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
@@ -110,7 +111,7 @@
             
             <div class="tab-pane" id="filter" role="tabpanel" aria-labelledby="filter-tab">
               <h5>You can filter the images displayed by several parameters...</h5>
-              <form action="{% url 'images_filtered' %}" method="get" target="_blank">
+              <form action="{% url 'images_filtered' %}" method="get">
                 <!-- {% csrf_token %} -->
                 {{ filter_form.as_p }}
                 
