@@ -8,15 +8,11 @@ from .models import Profile
 
 @receiver(post_save, sender=User)
 def create_profile(sender, instance, created, **kwargs):
+    """ Create a user profile. """
     if created:
         Profile.objects.create(user=instance)
 
 @receiver(post_save, sender=User)
 def save_profile(sender, instance, **kwargs):
+    """ Save a user profile. """
     instance.profile.save()
-
-# Following not testing ok, needs tweaking...
-# def save_profile(sender, instance, **kwargs):
-#     img = resizeimage.resize_height(instance.profile.image, 128)
-#     instance.profile.image = img
-#     instance.profile.save(self, **kwargs)
