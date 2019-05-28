@@ -141,15 +141,16 @@ In order not to distract or detract from the images themselves, the layout and d
 * Tweak styling and fonts
 * Make sidebar into tabbed panel, 2nd tab displaying a form for filtering
 * Successfully implement views filtered by image parameters, by using a lambda in the override of 'get_queryset()' in class FilteredImageListView in fract/views.py
-*
+* Write content for 'About' page and style it
+
 
 
 ### Final Stages: To Do:
     - Snipcart - Empty cart on logout
     - Fix Snipcart sometimes not finding product when scraping page
     - Finish this README.md, including acknowledgements
-    - Write content for "About" page
-    - Add 'Details' popup or toast to show image parameters in detail view
+    - Write content for "About" page - DONE
+    - Add 'Details' popup or toast to show image parameters in detail view - DONE
     - Side panel - make tabs, show filtering options - DONE
     - Fix footer background - DONE
     - Adjust navbar icon placement and font size - DONE
@@ -170,6 +171,7 @@ In order not to distract or detract from the images themselves, the layout and d
     - Improve styling and find a better way to present the images, perhaps with a higher-resolution version (perhaps 2806 x 1984) for users prepared to wait, and a smaller version for list view on mobile
     - Further customise the Snipcart workflow 
     - Store orders in the user profile, display for the user's convenience, and think how to use for marketing purposes
+    - Add Java function definitions to database so we can display as image detail
 
 ## Testing
 
@@ -180,6 +182,7 @@ In order not to distract or detract from the images themselves, the layout and d
     - by clicking 'Forgot password' and checking the reset email arrives and the link it supplies works
     - by changing things in the admin panel and trying to break stuff (e.g. deleting a user and then checking the profile is removed by CASCADE)
     - by testing the 'Like' buttons for images, with different users, and checking the counter is incremented as expected
+    - by testing the filtering options and checking the result sets in the shell
 
 * In this way many bugs were uncovered and subsequently fixed
 
