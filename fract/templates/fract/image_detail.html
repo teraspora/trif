@@ -31,7 +31,6 @@
                     </details>
                     <a class="btn btn-warning btn-sm float-right heart" href="{% url 'add_like' img_id=object.id %}"><i class="fas fa-heart fa_custom"></i></a >
                 {% else %}
-                    {% url 'image' pk=object.id as this_image_url %}
                     <a href="{% url 'login' %}?next={% url 'image' pk=object.id %}" class="btn btn-primary">Log in to buy...</a>
                 {% endif %}
                     <span class="label label-primary float-right">Likes: <span class="badge">{{ object.num_likes }}</span></span>
