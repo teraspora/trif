@@ -36,7 +36,15 @@ Most images are produced using somewhere between 32 and 1024 maximum iterations 
 
 ## UI
 
+### Sketches for list view and detailed (single image) view:
+ 
+I wanted a simple design because the images themselves are complex.   I just sketched out on paper (scans embedded below) some rough ideas for the main views, as a starting point, knowing that that could change during the development process.   In the end, knowing that design is not my strongpoint, I am fairly satisfied with how it has turned out.
 
+Some ideas for improvement will no doubt become apparent with time, and will be appraised for possible implementation as appropriate.   Pull requests welcome!
+
+![](design_docs/trif-layout-0.jpg)
+![](design_docs/trif-layout-1.jpg)
+![](design_docs/trif-layout-2.jpg)
 
 ## Specification
 
@@ -106,16 +114,6 @@ In order not to distract or detract from the images themselves, the layout and d
 - Other views will enable the user to view the entire set of images (maybe with pagination) or subset based on filtering criteria;
 - Clicking on a single image will cause it to be rendered alone, at \~80% screen width, with a "Buy" button at bottom right.
 - Other views will enable a user to register, deregister or amend account details.
-
-### Sketches for list view and detailed (single image) view:
- 
-I wanted a simple design because the images themselves are complex.   I just sketched out on paper (scans embedded below) some rough ideas for the main views, as a starting point, knowing that that could change during the development process.   In the end, knowing that design is not my strongpoint, I am fairly satisfied with how it has turned out.
-
-Some ideas for improvement will no doubt become apparent with time, and will be appraised for possible implementation as appropriate.   Pull requests welcome!
-
-![](design_docs/trif-layout-0.jpg)
-![](design_docs/trif-layout-1.jpg)
-![](design_docs/trif-layout-2.jpg)
 
 ## Development process log / overview
 
