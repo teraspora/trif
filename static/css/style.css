@@ -247,3 +247,10 @@ input, select {
     background-color: var(--pale-blue);
     color: var(--dark-blue);    
 }
+
+.favicon {
+    margin-right: 1vw;
+    border-radius: 28px;
+}
+
+
