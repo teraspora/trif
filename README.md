@@ -146,10 +146,11 @@ In order not to distract or detract from the images themselves, the layout and d
 
 
 ### Final Stages: To Do:
-    - Fix favicon not being seen by browser
     - Snipcart - Empty cart on logout
     - Fix Snipcart sometimes not finding product when scraping page
-    - Finish this README.md, including acknowledgements
+    - Finish this README.md, including acknowledgements and deployment guide
+    - Scan drafts of list & detail pages and include here above
+    - Fix favicon not being seen by browser - DONE
     - Write content for "About" page - DONE
     - Add 'Details' popup or toast to show image parameters in detail view - DONE
     - Side panel - make tabs, show filtering options - DONE
@@ -163,16 +164,18 @@ In order not to distract or detract from the images themselves, the layout and d
     - Code linting / validation
     - Run CSS through Autoprefixer
     - Test responsiveness on mobile devices -ONGOING
+    - Repeat testing in Firefox and Opera
     
 ### Features left to implement in future versions:
     - Find best way to shrink profile pictures, to obviate storing and serving too-large user-uploaded images
     - Multiple sizes of prints
     - Send a 'Like' to the server with Javascript rather than reloading the page, I guess with an AJAX request
     - Store a user's cart in case s/he logs out or clears browser cache
-    - Improve styling and find a better way to present the images, perhaps with a higher-resolution version (perhaps 2806 x 1984) for users prepared to wait, and a smaller version for list view on mobile
+    - Improve styling and find a better way to present the images, perhaps with a higher-resolution version (perhaps 2806 x 1984) for users prepared to wait, and a smaller version for list view on mobile and thumbnail for shopping cart
     - Further customise the Snipcart workflow 
     - Store orders in the user profile, display for the user's convenience, and think how to use for marketing purposes
-    - Add Java function definitions to database so we can display as image detail
+    - Add Java function definitions to database so we can display as image detail for geeks
+    - Test in Safari, Edge
 
 ## Testing
 
@@ -185,7 +188,7 @@ In order not to distract or detract from the images themselves, the layout and d
     - by testing the 'Like' buttons for images, with different users, and checking the counter is incremented as expected
     - by testing the filtering options and checking the result sets in the shell
 
-* In this way many bugs were uncovered and subsequently fixed
+* In this way many bugs were uncovered and subsequently fixed.
 
 
 ## Deployment
