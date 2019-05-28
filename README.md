@@ -353,6 +353,9 @@ One extra thing I notice, which may be relevant, is that after the cart is then 
 
 ## Appendix:  List of Commits
 
+- 67f296e Reformat commit list in README.md
+- be935a0 Add one line to README.md
+- 4f3cb8b Finish README.md (-ish), except for Snipcart issue
 - 25a2259 Remove old commented-out code
 - 22a5556 Add section to README.md about ongoing issues
 - bb2fe87 Add user's name to conditional 'Liked Images' header at top of index.html
