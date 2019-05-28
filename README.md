@@ -38,7 +38,7 @@ Most images are produced using somewhere between 32 and 1024 maximum iterations 
 
 ### Sketches for list view and detailed (single image) view:
  
-I wanted a simple design because the images themselves are complex.   I just sketched out on paper (scans embedded below) some rough ideas for the main views, as a starting point, knowing that that could change during the development process.   In the end, knowing that design is not my strongpoint, I am fairly satisfied with how it has turned out.
+I wanted a simple design because the images themselves are complex.   Also sans-serif fonts, as the images have lots of curly stuff!   I just sketched out on paper (scans embedded below) some rough ideas for the main views, as a starting point, knowing that that could change during the development process.   In the end, knowing that design is not my strongpoint, I am fairly satisfied with how it has turned out.
 
 Some ideas for improvement will no doubt become apparent with time, and will be appraised for possible implementation as appropriate.   Pull requests welcome!
 
@@ -158,6 +158,10 @@ In order not to distract or detract from the images themselves, the layout and d
     - Fix Snipcart sometimes not finding product when scraping page
     - Finish this README.md, including acknowledgements and deployment guide
     - Fix issue of Django admin static files being included in 'collectstatic'
+    - Add username to 'Liked Images' header
+    - Add 'now hosted at...' to About page 1st milestone link
+    - Style pagination buttons and label
+    - Fix 'Filters' link at bottom of Info panel not working - DONE (removed link, changed text)
     - Repeat testing in Firefox and Opera
     - Redirect user back to previous page upon login (if straightforward) - DONE f14c651
     - Scan draft sketches of list & detail pages and include here above - DONE 34dade7
