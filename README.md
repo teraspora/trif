@@ -267,6 +267,8 @@ In order not to distract or detract from the images themselves, the layout and d
 
     12. When all seems to be working, run the app on Heroku (`heroku open -a <your Heroku App Name>`).
 
+    13. To run the project for real ecommerce disable the testing mode in Snipcart's dashboard.
+
 ## Ongoing Issues
 
 * When I run `python3 manage.py collectstatic`, Django picks up my static files ok and uploads them to S3, but it also picks up a static directory inside my virtual environment, `/lib/python3.7/site-packages/django/contrib/admin/static` and uploads nearly 100 files to my S3 bucket.   Evidently Django goes looking for them there, too, because if I delete them then the Django Admin UI is unstyled.   My workaround has been to change the basename of this directory to `static_temp`, unless I need to use the Admin interface, in which case I change it back.   I set up aliases to do this quickly.   I am conscious, though, that it's a workaround, if not a fudge, but no-one has been able to discern the cause and I have not found an answer online, though it 'must' be something to do with the interaction of my settings in `settings.py`.   If, alternatively, I run the `collectstatic` function in the Heroku CLI, Django finds static folders in `.heroku/` instead!   So I am keen to learn more about how Django handles static files so that I can resolve it soon.
