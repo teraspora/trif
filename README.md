@@ -146,6 +146,7 @@ In order not to distract or detract from the images themselves, the layout and d
 
 
 ### Final Stages: To Do:
+    - Fix favicon not being seen by browser
     - Snipcart - Empty cart on logout
     - Fix Snipcart sometimes not finding product when scraping page
     - Finish this README.md, including acknowledgements
