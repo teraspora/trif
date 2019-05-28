@@ -157,7 +157,8 @@ In order not to distract or detract from the images themselves, the layout and d
     - Snipcart - Empty cart on logout
     - Fix Snipcart sometimes not finding product when scraping page
     - Finish this README.md, including acknowledgements and deployment guide
-    - Scan drafts of list & detail pages and include here above
+    - Redirect user back to previous page upon login (if straightforward) - DONE
+    - Scan draft sketches of list & detail pages and include here above - DONE
     - Fix favicon not being seen by browser - DONE
     - Write content for "About" page - DONE
     - Add 'Details' popup or toast to show image parameters in detail view - DONE
