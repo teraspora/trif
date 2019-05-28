@@ -71,16 +71,6 @@ img.fractal:hover {
     z-index: 128;
 }
 
-/* following suggested by Nishant
-   but not clear what element to apply it to... */
-
-/*.thumb-wrapper {
-    position: absolute;
-    right: 10px;
-    width: 100%;
-    text-align: center;
-}*/
-
 .thumbnail {
     position: relative;
     margin-bottom: 28px;
@@ -109,6 +99,7 @@ img.fractal:hover {
 
 .card-text {
     text-align: center;
+    border-radius: 3px;
 }
 
 .card-body.about-body {
