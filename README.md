@@ -113,9 +113,9 @@ I wanted a simple design because the images themselves are complex.   I just ske
 
 Some ideas for improvement will no doubt become apparent with time, and will be appraised for possible implementation as appropriate.   Pull requests welcome!
 
-![](design-docs/trif-layout-0.jpg)
-![](design-docs/trif-layout-1.jpg)
-![](design-docs/trif-layout-2.jpg)
+![](design_docs/trif-layout-0.jpg)
+![](design_docs/trif-layout-1.jpg)
+![](design_docs/trif-layout-2.jpg)
 
 ## Development process log / overview
 
