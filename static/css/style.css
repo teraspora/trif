@@ -275,10 +275,10 @@ input, select {
 
 .pag-info {
     padding-left: 0.5vw;
-    padding-right: 0.5vw;
+    padding-top: 0.6vh;
     background-color: var(--text-yellow);
     color: var(--bg-very-dark);
-    border-radius: 12px;
+    border-radius: 28px;
 }
 
 
