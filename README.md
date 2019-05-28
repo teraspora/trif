@@ -58,9 +58,9 @@ In future versions the user should also be able to filter by the predominant col
 
 The application must provide secure user registration, authentication and authorisation.   It must provide a secure password reset facility in case of forgotten passwords.   It will not provide a "Forgot my email" facility.
 
-When a user clicks on an image it should be enlarged to roughly 80% of the viewport, and a link to buy should be prominent.
+When a user clicks on an image it should be enlarged, and a link to buy should be prominent.
 
-An authenticated user should also be able to 'like' and image, and subsequently view the set of images s/he has liked.
+An authenticated user should also be able to 'like' an image, and subsequently view the set of images s/he has liked.
 
 If a user clicks to buy, they should be taken to a page where they can select a size, be informed of the price and complete the transaction with a credit card or Paypal etc.
 
@@ -106,6 +106,16 @@ In order not to distract or detract from the images themselves, the layout and d
 - Other views will enable the user to view the entire set of images (maybe with pagination) or subset based on filtering criteria;
 - Clicking on a single image will cause it to be rendered alone, at \~80% screen width, with a "Buy" button at bottom right.
 - Other views will enable a user to register, deregister or amend account details.
+
+### Sketches for list view and detailed (single image) view:
+ 
+I wanted a simple design because the images themselves are complex.   I just sketched out on paper (scans embedded below) some rough ideas for the main views, as a starting point, knowing that that could change during the development process.   In the end, knowing that design is not my strongpoint, I am fairly satisfied with how it has turned out.
+
+Some ideas for improvement will no doubt become apparent with time, and will be appraised for possible implementation as appropriate.   Pull requests welcome!
+
+![](design-docs/trif-layout-0.jpg)
+![](design-docs/trif-layout-1.jpg)
+![](design-docs/trif-layout-2.jpg)
 
 ## Development process log / overview
 
@@ -211,6 +221,10 @@ In order not to distract or detract from the images themselves, the layout and d
 - The [Python docs][13]
 - My mentor Nishant Kumar
 - All the good answers and guides and tutorials and blogs on the web, on [Stack Overflow][14] and elsewhere, that have helped me on the way
+
+<p>
+    This website is the culmination of over a year of study online.   It is my fifth and final "Milestone Project" for the Code Institute course.   It is built in <a target="_blank" href="https://www.python.org/downloads/">Python 3.7</a> on the backend, with <a target="_blank" href="https://www.djangoproject.com/">Django 2.2</a>. The frontend templates are built using <a target="_blank" href="https://docs.djangoproject.com/en/2.2/topics/templates/#the-django-template-language">the Django template language</a>, with <a target="_blank" href="https://getbootstrap.com/docs/4.3/getting-started/introduction/">Bootstrap 4</a> and my own <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a>.  It is hosted at <a target="_blank" href="https://ztrif.herokuapp.com/">Heroku</a>. It uses a <a target="_blank" href="https://www.postgresql.org/">PostgreSQL</a> database also hosted at Heroku to store image data and user profile data.   The images themselves are stored in an <a target="_blank" href="https://aws.amazon.com/s3/">Amazon S3 bucket</a>, along with other static files.
+</p>
 
 
 [0]: https://www.youtube.com/playlist?list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p
