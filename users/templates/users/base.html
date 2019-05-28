@@ -43,12 +43,11 @@
           <!-- Navbar Right Side -->
           <div class="navbar-nav">
               {% if user.is_authenticated %}
-                <img class="rounded-circle article-img" src="{{ user.profile.image.url }}" alt="user's profile picture" width="32" height="32">
-
                 <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
                 <a class="nav-item nav-link" href="{% url 'likes' %}">Likes</a>
                 <a class="nav-item nav-link snipcart-checkout" href="#">Checkout</a>
                 <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+                <img class="rounded-circle article-img profile-icon" src="{{ user.profile.image.url }}" alt="user's profile picture" width="32" height="32">
               {% else %}
                 <a class="nav-item nav-link" href="{% url 'login' %}?next={{ request.path }}">Login</a>
                 <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
@@ -110,7 +109,7 @@
                 Most images are produced using somewhere between 32 and 1024 maximum iterations per pixel.   Most functions have a strong trigonometric element, using the real sine and cosine functions applied separately to the real and imaginary parts, in various combinations, as the complex trig functions tend to produce fragmented, jagged images.
               </p>
               <h6>
-                Click <a href="#filter">Filters</a> to filter the images by their parameters...
+                Click "Filters" above to filter the images by their parameters...
               </h6>
               
             </div>

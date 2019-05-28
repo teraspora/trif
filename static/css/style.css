@@ -262,3 +262,32 @@ input, select {
     margin-right: 1vw;
     border-radius: 28px;
 }
+
+.profile-icon {
+    margin-left: 2vw;
+    margin-top: 1vh;
+}
+
+.pag-btn {
+    background-color: var(--text-orange);
+    color: var(--bg-very-dark);
+}
+
+.pag-info {
+    padding-left: 0.5vw;
+    padding-right: 0.5vw;
+    background-color: var(--text-yellow);
+    color: var(--bg-very-dark);
+    border-radius: 12px;
+}
+
+
+
+
+
+
+
+
+
+
+
