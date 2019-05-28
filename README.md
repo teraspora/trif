@@ -157,23 +157,23 @@ In order not to distract or detract from the images themselves, the layout and d
     - Snipcart - Empty cart on logout
     - Fix Snipcart sometimes not finding product when scraping page
     - Finish this README.md, including acknowledgements and deployment guide
-    - Redirect user back to previous page upon login (if straightforward) - DONE
-    - Scan draft sketches of list & detail pages and include here above - DONE
-    - Fix favicon not being seen by browser - DONE
-    - Write content for "About" page - DONE
-    - Add 'Details' popup or toast to show image parameters in detail view - DONE
-    - Side panel - make tabs, show filtering options - DONE
-    - Fix footer background - DONE
-    - Adjust navbar icon placement and font size - DONE
-    - Implement filtering options - DONE
-    - Make background black beneath image card text - DONE
-    - Fix disappearing 'Heart' icon on mobile -DONE 
     - Fix issue of Django admin static files being included in 'collectstatic'
-    - Testing; maybe CT/CI with Travis
-    - Code linting / validation
-    - Run CSS through Autoprefixer
-    - Test responsiveness on mobile devices -ONGOING
     - Repeat testing in Firefox and Opera
+    - Redirect user back to previous page upon login (if straightforward) - DONE f14c651
+    - Scan draft sketches of list & detail pages and include here above - DONE 34dade7
+    - Fix favicon not being seen by browser - DONE 8dc29b6
+    - Write content for "About" page - DONE 657a470
+    - Add 'Details' popup or toast to show image parameters in detail view - DONE e3cc0a2
+    - Side panel - make tabs, show filtering options - DONE 73542c2 &c.
+    - Fix footer background - DONE 0a70b0b
+    - Adjust navbar icon placement and font size - DONE b61cf01 875cbf0 a3acae7
+    - Implement filtering options - DONE 73542c2
+    - Make background black beneath image card text - DONE 2a5c562
+    - Fix disappearing 'Heart' icon on mobile - NOT AN ISSUE, only when not logged in, by intention! 
+    - Testing; maybe CT/CI with Travis
+    - Code linting / validation - DONE
+    - Run CSS through Autoprefixer - DONE f031628
+    - Test responsiveness on mobile devices -ONGOING
     
 ### Features left to implement in future versions:
     - Find best way to shrink profile pictures, to obviate storing and serving too-large user-uploaded images
