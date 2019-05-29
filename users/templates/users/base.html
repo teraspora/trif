@@ -48,8 +48,7 @@
                 <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
                 <a class="nav-item nav-link" href="{% url 'likes' %}">Likes</a>
                 <a class="nav-item nav-link snipcart-checkout" href="#">Checkout</a>
-                <span onclick=" Snipcart.api.items.clear().then(function (removedItems)
-                  {console.log(`\n\n*** SNIPCART: Removed: ${removedItems}`);}); ">
+                <span onclick=" Snipcart.api.items.clear(); ">
                 <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a></span>
                 <img class="rounded-circle article-img profile-icon" src="{{ user.profile.image.url }}" alt="user's profile picture" width="32" height="32">
               {% else %}
