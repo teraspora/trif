@@ -34,6 +34,16 @@
                     </details>
                     <a class="btn btn-warning btn-sm float-right heart" href="{% url 'add_like' img_id=object.id %}"><i class="fas fa-heart fa_custom"></i></a >
                 {% else %}
+                    <!-- product defn. present for Snipcart back-crawl; hidden for unauthenticated users -->
+                    <button
+                    class="snipcart-add-item hidden"
+                        data-item-id="{{ object.id }}"
+                        data-item-name="fractal-print-{{ object.id }}"
+                        data-item-url="https://ztrif.herokuapp.com/image/{{ object.id }}/"
+                        data-item-price="45.00"
+                        data-item-description="Fractal Print {{ object.id }}">
+                            <span class="label label-primary">Buy! A5 only €45</span>
+                    </button>
                     <a href="{% url 'login' %}?next={% url 'image' pk=object.id %}" class="btn btn-primary">Log in to buy...</a>
                 {% endif %}
                     <span class="label label-primary float-right">Likes: <span class="badge">{{ object.num_likes }}</span></span>

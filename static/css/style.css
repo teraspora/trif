@@ -7,6 +7,9 @@ Playlist: https://www.youtube.com/playlist?list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U
 Code: https://github.com/CoreyMSchafer/code_snippets/blob/master/Django_Blog/snippets/main.css
 */
 
+
+/* General rules */
+
 body {
     --dark-blue: #050220;
     --text-yellow: #f1bf32;
@@ -34,6 +37,8 @@ ul {
     background-color: var(--dark-blue) !important;
 }
 
+/* Site Header, containing nav bar */
+
 .site-header .navbar-nav .nav-link {
     color: var(--text-yellow);
     font-size: 3.4vw;
@@ -53,6 +58,37 @@ ul {
 .site-header {
     background-color: var(--dark-blue) !important;
 }
+
+nav {
+    border-bottom: 1px solid var(--narrow-border-colour);
+}
+
+.navbar-dark .navbar-brand {
+    color: var(--text-orange);
+    font-size: 4vmax;
+}
+/* Following font sizes too small for mobile */
+@media only screen and (min-width: 769px) {
+  .site-header .navbar-nav .nav-link {
+    font-size: 1.4vw;
+  }
+  .nav-item.nav-link {
+    font-size: 2vw;
+  }
+  .navbar-dark .navbar-brand {
+    color: var(--text-orange);
+    font-size: 3vw;
+  }
+}
+
+.navbar-dark .navbar-brand:hover {
+    color: var(--hover-colour);
+    -webkit-transform: scale(1.04);
+        -ms-transform: scale(1.04);
+            transform: scale(1.04);
+}
+
+/* Main content */
 
 .content-section {
     background: var(--dark-blue);
@@ -124,34 +160,6 @@ img.fractal:hover {
     background-color: var(--dark-blue);
 }
 
-nav {
-    border-bottom: 1px solid var(--narrow-border-colour);
-}
-
-.navbar-dark .navbar-brand {
-    color: var(--text-orange);
-    font-size: 4vmax;
-}
-
-@media only screen and (min-width: 769px) {
-  .site-header .navbar-nav .nav-link {
-    font-size: 1.4vw;
-  }
-  .nav-item.nav-link {
-    font-size: 2vw;
-  }
-  .navbar-dark .navbar-brand {
-    color: var(--text-orange);
-    font-size: 3vw;
-  }
-}
-
-.navbar-dark .navbar-brand:hover {
-    color: var(--hover-colour);
-    -webkit-transform: scale(1.04);
-        -ms-transform: scale(1.04);
-            transform: scale(1.04);
-}
 
 .main-container {
     padding-top: 2vh;
@@ -162,18 +170,11 @@ nav {
   border-radius: 50%;
 }
 
-.fa_custom {
-  color: var(--hover-colour);
-}
-
-.heart {
-  margin-top: -25px;
-  margin-right: -25px;
-}
-
 main {
     min-height: calc(100vh - 72px);
 }
+
+/* Footer */
 
 footer {
     min-height: 72px;
@@ -184,6 +185,7 @@ footer {
 
 /* Font Awesome styling for social icons in footer */
 /* Copied, updated and adapted from my website www.teraspora.net, my CI Milestone 1 project */
+
 .social-icon {
     color: #fff;
 }
@@ -195,12 +197,10 @@ ul.social-icons {
     display: inline;
     margin-right: 2vw;
 }
-
 .social-icons a {
     color: #fff;
     text-decoration: none;
 }
-
 .fab, .ts-icon {
     display: inline;
     padding: 2px 2px;
@@ -224,6 +224,25 @@ ul.social-icons {
     -o-transition: 0.6s;
     transition: 0.6s;    
 }
+.fa_custom {
+  color: var(--hover-colour);
+}
+
+
+/* Other icons */
+
+.favicon {
+    margin-right: 1vw;
+    border-radius: 28px;
+}
+.heart {
+  margin-top: -25px;
+  margin-right: -25px;
+}
+.profile-icon {
+    margin-left: 2vw;
+    margin-top: 1vh;
+}
 .icon-st:hover {
     background-color: #f321b7;
     -webkit-transition: 0.6s;
@@ -241,6 +260,7 @@ ul.social-icons {
     font-size: 1.5vmax;
 }
 
+/* Alternate text colour in sidebar info tab */
 #info > *:nth-child(odd) {
     color: var(--text-orange);
 }
@@ -250,15 +270,8 @@ input, select {
     color: var(--dark-blue);    
 }
 
-.favicon {
-    margin-right: 1vw;
-    border-radius: 28px;
-}
 
-.profile-icon {
-    margin-left: 2vw;
-    margin-top: 1vh;
-}
+/* Pagination controls */
 
 .pag-btn {
     background-color: var(--text-orange);
@@ -272,3 +285,10 @@ input, select {
     color: var(--bg-very-dark);
     border-radius: 28px;
 }
+
+ /* used to hide product definition from unauthenticated users,
+    but make available for Snipcart back-crawler */
+.hidden {   
+    display: none;
+}
+
