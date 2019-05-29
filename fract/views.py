@@ -15,7 +15,7 @@ STATIC_LARGE_IMAGE_DIR = 'images/zarg877/'
 class ImageListView(ListView):
     """ Render a List view of all images. """
     model = Image
-    paginate_by = 30
+    paginate_by = 18
     template_name = 'fract/index.html'
     context_object_name = 'image_list'
     ordering = '?'      # random ordering
@@ -32,7 +32,7 @@ class ImageListView(ListView):
 
 class LikedImageListView(ListView):
     """ Render a List view of all images liked by this user. """
-    paginate_by = 30
+    paginate_by = 18
     template_name = 'fract/index.html'  # re-use "list all" template for '/likes'
     context_object_name = 'image_list'
     ordering = 'id'      # random ordering
@@ -56,7 +56,7 @@ class LikedImageListView(ListView):
 
 class FilteredImageListView(ListView):
     """ Render a List view of all images, filtered by specified parameters. """
-    paginate_by = 30
+    paginate_by = 18
     template_name = 'fract/index.html'  # re-use "list all" template for '/likes'
     context_object_name = 'image_list'
     ordering = 'id'
