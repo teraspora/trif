@@ -1,3 +1,5 @@
+# fract/models.py
+
 from django.db import models
 from . import img_params
 

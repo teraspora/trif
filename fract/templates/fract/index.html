@@ -1,10 +1,11 @@
+<!-- index.html - Home page template that also serves to render filtered views -->
 {% extends 'users/base.html' %}
 {% load static %}
 
 {% block content %}
 
     <div class="content-section">
-
+        <!-- Header determined by filtering type; no header if displaying all images -->
         {% if likes %}
           <h5>{{ user.username }}'s Liked Images</h5>
         {% endif %}
@@ -12,9 +13,9 @@
         {% if filtered %}
           <h5>Filtered Images</h5>
         {% endif %}
-
+      
         <div class="row">
-  
+          <!-- Display all images in queryset in a grid -->
           {% for img in image_list %}
             <div class="col-md-4">
                 <div class="thumbnail">
@@ -33,7 +34,8 @@
               </div>
           {% endfor %}
 
-            {% load my_tags %}
+          <!-- Pagination code -->
+          {% load my_tags %}
 
           {% if is_paginated %}
             {% if page_obj.has_previous %}

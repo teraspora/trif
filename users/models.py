@@ -1,12 +1,11 @@
-# models.py
+# users/models.py
 
 from django.db import models
 from django.contrib.auth.models import User
-# from PIL import Image
-# from resizeimage import resizeimage
 from fract.models import Image
 
 class Profile(models.Model):
+    """ Represents a user's profile, including profile picture. """
     # CASCADE => if user is deleted, then user's profile is also deleted
     # OneToOneField => user has same structure as User model from django.contrib.auth.models
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -15,9 +14,3 @@ class Profile(models.Model):
 
     def __str__(self):
         return f'{self.user.username}\'s profile'
-
-    # def save(self, *args, **kwargs):
-    #     img = Image.open(self.image.path)
-    #     img = resizeimage.resize_height(img, 128)
-    #     self.image = img
-    #     super(Profile, self).save(*args, **kwargs)

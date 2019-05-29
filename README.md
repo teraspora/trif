@@ -156,15 +156,15 @@ In order not to distract or detract from the images themselves, the layout and d
 * Reasonably comprehensive manual testing: see the Testing" section below.
 
 ### Final Stages: To Do:
+
     - Snipcart - Empty cart on logout
     - Fix Snipcart sometimes not finding product when scraping page
-    - Finish this README.md, including acknowledgements and deployment guide
-    - Fix issue of Django admin static files being included in 'collectstatic'
+    - Check all code and update comments and docstrings - DONE
+    - Finish this README.md, including acknowledgements and deployment guide - DONE (for now)
     - Add username to 'Liked Images' header - DONE bb2fe87
     - Add 'now hosted at...' to About page 1st milestone link - DONE 3dfc478
     - Style pagination buttons and label - DONE e605b7c 186979b
     - Fix 'Filters' link at bottom of Info panel not working - DONE (removed link, changed text)
-    - Repeat testing in Firefox and Opera
     - Redirect user back to previous page upon login (if straightforward) - DONE f14c651
     - Scan draft sketches of list & detail pages and include here above - DONE 34dade7
     - Fix favicon not being seen by browser - DONE 8dc29b6
@@ -179,9 +179,11 @@ In order not to distract or detract from the images themselves, the layout and d
     - Testing - ONGOING
     - Code linting / validation - DONE
     - Run CSS through Autoprefixer - DONE f031628
-    - Test responsiveness on mobile devices -ONGOING
+    - Test responsiveness on mobile devices - ONGOING
     
 ### Features left to implement in future versions:
+
+    - Fix issue of Django admin static files being included in 'collectstatic'
     - Find best way to shrink profile pictures, to obviate storing and serving too-large user-uploaded images
     - Multiple sizes of prints
     - Send a 'Like' to the server with Javascript rather than reloading the page, I guess with an AJAX request

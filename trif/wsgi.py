@@ -1,3 +1,5 @@
+# trif/wsgi.py
+
 """
 WSGI config for trif project.
 

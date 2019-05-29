@@ -1,3 +1,7 @@
+# fract/populate_db.py - run manually to add a list of images to the database.
+# Just substitute your own immage list for the initial one below.
+# Make sure the filenames adhere to the naming requirements. 
+
 import os
 from fract.models import Image;
 

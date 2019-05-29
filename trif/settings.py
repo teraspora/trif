@@ -1,3 +1,5 @@
+# trif/settings.py
+
 """
 Django settings for trif project.
 

@@ -4,6 +4,7 @@ from django import forms
 from .models import Image
 
 class ImageFilterForm(forms.Form):
+    """ Form to display parameters which user can set to filter the list of images displayed """
     all_imgs = Image.objects.all()
     FLAVOURS = (('M', 'Mandelbrot'), ('J', 'Julia'), ('*', 'Both'))
     power_max = max([int(img.params()['power']) for img in all_imgs])

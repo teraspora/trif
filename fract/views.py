@@ -1,3 +1,5 @@
+# fract/views.py
+
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 from .models import Image
@@ -10,20 +12,8 @@ if len(Image.objects.all()) == 0:
 STATIC_SMALL_IMAGE_DIR = 'images/zarg438/'
 STATIC_LARGE_IMAGE_DIR = 'images/zarg877/'
 
-# OLD view-function, replaced by class-based view below
-# def index(request):
-#     #image_names = map(lambda img: STATIC_IMAGE_DIR + img.name, Image.objects.filter(id__lt=13)) # for testing
-
-#     # Get image data as a list of tuples like ('xtsM2f101C431-pre167-438x310x0.0y0.0_6594.png', 74)
-#     image_data = map(lambda img: (STATIC_IMAGE_DIR + img.name, img.id), Image.objects.all())
-#     context = {
-#         'image_data': image_data
-#     }
-#     return render(request, 'fract/index.html', context)
-
-
 class ImageListView(ListView):
-    """ List view of all images. """
+    """ Render a List view of all images. """
     model = Image
     paginate_by = 30
     template_name = 'fract/index.html'
@@ -41,20 +31,22 @@ class ImageListView(ListView):
 
 
 class LikedImageListView(ListView):
-    """ List view of all images. """
+    """ Render a List view of all images liked by this user. """
     paginate_by = 30
     template_name = 'fract/index.html'  # re-use "list all" template for '/likes'
     context_object_name = 'image_list'
     ordering = 'id'      # random ordering
 
     def get_queryset(self):
+        """ Set the queryset to be the set of images liked by this user """
         queryset = self.request.user.profile.liked_images.all()
         return queryset
 
     def get_context_data(self, **kwargs):
         """
         Get the context and append the STATIC_IMAGE_DIR to it, so we can 
-        use this in the template for the image source path.
+        use this in the template for the image source path, and a 'likes' flag so the
+        template knows what heading to use.
         """
         context = super(LikedImageListView, self).get_context_data(**kwargs)
         context['STATIC_SMALL_IMAGE_DIR'] = STATIC_SMALL_IMAGE_DIR
@@ -63,13 +55,14 @@ class LikedImageListView(ListView):
 
 
 class FilteredImageListView(ListView):
-    """ List view of all images. """
+    """ Render a List view of all images, filtered by specified parameters. """
     paginate_by = 30
     template_name = 'fract/index.html'  # re-use "list all" template for '/likes'
     context_object_name = 'image_list'
     ordering = 'id'
 
     def get_queryset(self):
+        """ Set the queryset to be the set of all images filtered by the specified parameters """
         EMPTY = ''
         func = self.request.GET.get("func")
         alt_func = self.request.GET.get("alt_func")
@@ -95,7 +88,7 @@ class FilteredImageListView(ListView):
 
 
 class ImageDetailView(DetailView):
-    """ Detail view of a single image """
+    """ Render a detail view of a single image """
     model = Image
     def get_context_data(self, **kwargs):
         """
@@ -107,10 +100,5 @@ class ImageDetailView(DetailView):
         return context
 
 def about(request):
-    """ Return the 'About' page. """
+    """ Render the 'About' page. """
     return render(request, 'fract/about.html')
-
-# def images_filtered(request):
-#     """ Return the list of images, filtered by the specified criteria. """
-#     # Currently a stub
-#     return render(request, 'fract/about.html')    

@@ -1,3 +1,5 @@
+/* static/css/style.css */
+
 /*
 This code was originally based on a snippet from Corey Schafer, as linked to in his Django 2 video series.
 I have since augmented it and altered it substantially.
@@ -131,10 +133,6 @@ nav {
     font-size: 4vmax;
 }
 
-/*.nav-item.nav-link {
-    font-size: 3.4vmax;
-}
-*/
 @media only screen and (min-width: 769px) {
   .site-header .navbar-nav .nav-link {
     font-size: 1.4vw;
@@ -146,7 +144,6 @@ nav {
     color: var(--text-orange);
     font-size: 3vw;
   }
-
 }
 
 .navbar-dark .navbar-brand:hover {
@@ -198,11 +195,6 @@ ul.social-icons {
     display: inline;
     margin-right: 2vw;
 }
-/* Below omitted temporarily as not working - need to be set on block or inline-block element I think... */
-/*.social-icons li:hover {
-    transform: scale(1.1);
-}
-*/
 
 .social-icons a {
     color: #fff;
@@ -280,14 +272,3 @@ input, select {
     color: var(--bg-very-dark);
     border-radius: 28px;
 }
-
-
-
-
-
-
-
-
-
-
-

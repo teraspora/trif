@@ -1,4 +1,4 @@
-# add_images.py
+# fract/add_images.py - run manually to add the details from a folder of images to the database
 
 # Run in the shell: input the directory of SMALL images you want to add to the database.
 # Don't forget to add the actual images, and their LARGE counterparts, to the S3 bucket.
