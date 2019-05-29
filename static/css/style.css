@@ -175,6 +175,10 @@ img.fractal:hover {
     color: var(--text-orange);
 }
 
+.ts-small-btn-rev {
+    background-color: var(--text-orange);
+    color: var(--dark-blue);
+}
 main {
     min-height: calc(100vh - 72px);
 }
