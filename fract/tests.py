@@ -35,20 +35,26 @@ class TestImageFunctions(django.test.TestCase):
         self.assertEqual(self.img_b.name_large(), b_expected_name_large)
         
     def test_num_likes(self):
+        
         # New images should have no likes
         self.assertEqual(self.img_a.num_likes(), 0)
         self.assertEqual(self.img_b.num_likes(), 0)
+        
         # Let all users like img_a and let just every third one like img_b
         for user in self.users:
             user.profile.liked_images.add(self.img_a)
             if int(user.username[4:]) % 3 == 0:
                 user.profile.liked_images.add(self.img_b)
         num_users = len(self.users)
+
+        # Check the totals
         self.assertEqual(self.img_a.num_likes(), num_users)
         self.assertEqual(self.img_b.num_likes(), num_users // 3 + 1)
+        
         # If a user 're-likes' an image it should not increase the count
         self.users[13].profile.liked_images.add(self.img_a)
         self.assertEqual(self.img_a.num_likes(), num_users)
+        
         # If a user's profile is deleted, and the user has liked an image,
         # the value returned by num_likes() for that image should decrease by one
         self.users[7].profile.delete()
@@ -56,3 +62,9 @@ class TestImageFunctions(django.test.TestCase):
         self.users[12].profile.delete()        
         self.assertEqual(self.img_a.num_likes(), num_users - 3)
         
+
+class TestIndexView(TestCase):
+
+    def test_index_view(self):
+        response = self.client.get('/')
+        self.assertEqual(response.status_code, 200)
