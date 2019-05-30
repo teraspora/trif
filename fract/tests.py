@@ -67,4 +67,8 @@ class TestIndexView(django.test.TestCase):
 
     def test_index_view(self):
         response = self.client.get('/')
+        # Test Http status code is 200
         self.assertEqual(response.status_code, 200)
+        # Test queryset has 348 items
+        self.assertQuerysetEqual(Image.objects.all())
+        
