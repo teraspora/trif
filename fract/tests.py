@@ -1,5 +1,6 @@
 import django.test
 from .models import Image
+from .views import NUM_IMAGES_PER_PAGE
 from django.contrib.auth.models import User
 
 # Expected results
@@ -69,6 +70,6 @@ class TestIndexView(django.test.TestCase):
         response = self.client.get('/')
         # Test Http status code is 200
         self.assertEqual(response.status_code, 200)
-        # Test queryset has 348 items
-        self.assertQuerysetEqual(Image.objects.all())
-        
+        # Test queryset has fract.views.NUM_IMAGES_PER_PAGE items
+        self.assertnumQueries(NUM_IMAGES_PER_PAGE)
+
