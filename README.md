@@ -16,6 +16,8 @@ The project is hosted at [Heroku][8].   A [Postgresql][9] database, also hosted 
 
 The E-Commerce side is handled by [Snipcart][7].
 
+Automated testing uses `django.test`.   CI/CT is implemented through [Travis CI][16].
+
 At the outset, 348 images will be available, printed with professional fade-resistant pigments on high-quality photo paper.
 
 I generate these images by pouring equal measures of mathematics and computer programming into a pot, mixing well and cooking gently for a long time! ;)
@@ -156,6 +158,12 @@ In order not to distract or detract from the images themselves, the layout and d
 * Write content for 'About' page and style it
 * Step by step, fix the various issues in the below 'To Do' list
 * Reasonably comprehensive manual testing: see the Testing" section below.
+* Fix Snipcart issue.
+* Solve static issue.
+* Address miscellaneous styling issues.
+* Create some tests, of Image model.
+* Set up CI/CT with Travis CI
+* Write more tests...
 
 ### Final Stages: To Do:
 
@@ -321,3 +329,4 @@ I have tried with both a relative URL - occasionally it worked - and an absolute
 [13]: https://docs.python.org/3/
 [14]: https://github.com/teraspora/trif
 [15]: https://ztrif.herokuapp.com/
+[16]: https://travis-ci.org/
