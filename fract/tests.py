@@ -63,7 +63,7 @@ class TestImageFunctions(django.test.TestCase):
         self.assertEqual(self.img_a.num_likes(), num_users - 3)
         
 
-class TestIndexView(TestCase):
+class TestIndexView(django.test.TestCase):
 
     def test_index_view(self):
         response = self.client.get('/')
