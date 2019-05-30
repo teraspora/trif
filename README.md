@@ -319,3 +319,5 @@ I have tried with both a relative URL - occasionally it worked - and an absolute
 [13]: https://docs.python.org/3/
 [14]: https://github.com/teraspora/trif
 [15]: https://ztrif.herokuapp.com/
+
+[![Build Status](https://travis-ci.org/teraspora/trif.svg?branch=master)](https://travis-ci.org/teraspora/trif)
