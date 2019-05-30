@@ -1,6 +1,6 @@
 import django.test
 from .models import Image
-from .views import NUM_IMAGES_PER_PAGE
+# from .views import NUM_IMAGES_PER_PAGE
 from django.contrib.auth.models import User
 
 # Expected results
@@ -10,7 +10,8 @@ a_expected_params = {'image_id': '84077', 'size': '877x620', 'type': 'M', 'power
 b_expected_params = {'image_id': '42', 'size': '438x310', 'type': 'J', 'power': '1',
             'func': '3', 'alt_func': '62', 'mode': 'GM', 'pretrans': '70', 'xparams': [], 'full_flavour': 'Julia'}
 b_expected_name_large = 'xtsJ1f3GM62-pre70-877x620x0.y0._42.png'
-             
+
+NUM_IMAGES_PER_PAGE = 18    
 
 class TestImageFunctions(django.test.TestCase):
 
@@ -71,5 +72,5 @@ class TestIndexView(django.test.TestCase):
         # Test Http status code is 200
         self.assertEqual(response.status_code, 200)
         # Test queryset has fract.views.NUM_IMAGES_PER_PAGE items
-        self.assertnumQueries(NUM_IMAGES_PER_PAGE)
+        self.assertNumQueries(NUM_IMAGES_PER_PAGE)
 
