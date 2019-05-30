@@ -11,11 +11,12 @@ if len(Image.objects.all()) == 0:
 
 STATIC_SMALL_IMAGE_DIR = 'images/zarg438/'
 STATIC_LARGE_IMAGE_DIR = 'images/zarg877/'
+NUM_IMAGES_PER_PAGE = 18
 
 class ImageListView(ListView):
     """ Render a List view of all images. """
     model = Image
-    paginate_by = 18
+    paginate_by = NUM_IMAGES_PER_PAGE
     template_name = 'fract/index.html'
     context_object_name = 'image_list'
     ordering = '?'      # random ordering
@@ -32,7 +33,7 @@ class ImageListView(ListView):
 
 class LikedImageListView(ListView):
     """ Render a List view of all images liked by this user. """
-    paginate_by = 18
+    paginate_by = NUM_IMAGES_PER_PAGE
     template_name = 'fract/index.html'  # re-use "list all" template for '/likes'
     context_object_name = 'image_list'
     ordering = 'id'      # random ordering
@@ -56,7 +57,7 @@ class LikedImageListView(ListView):
 
 class FilteredImageListView(ListView):
     """ Render a List view of all images, filtered by specified parameters. """
-    paginate_by = 18
+    paginate_by = NUM_IMAGES_PER_PAGE
     template_name = 'fract/index.html'  # re-use "list all" template for '/likes'
     context_object_name = 'image_list'
     ordering = 'id'
@@ -98,6 +99,7 @@ class ImageDetailView(DetailView):
         context = super(ImageDetailView, self).get_context_data(**kwargs)
         context['STATIC_LARGE_IMAGE_DIR'] = STATIC_LARGE_IMAGE_DIR
         return context
+
 
 def about(request):
     """ Render the 'About' page. """
