@@ -90,9 +90,9 @@ class TestListViews(django.test.TransactionTestCase):
         response = self.client.get('/likes/')
         # Test Http status code is 200 OK
         self.assertEqual(response.status_code, 200, msg="*** Didn't get 200 OK from likes page! ***")
-        # # Queryset should be empty as uuu currently likes no images
-        # assertQuerysetEqual(response.context('image_list'), [], 
-        #     msg="*** Didn't get empty set when no images liked! ***")
+        # Queryset should be empty as uuu currently likes no images
+        self.assertQuerysetEqual(response.context['image_list'], [], 
+            msg="*** Didn't get empty set when no images liked! ***")
         # self.client.logout()
 
         # self.client.login(username='uuu', password='tested123')
