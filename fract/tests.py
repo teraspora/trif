@@ -2,6 +2,7 @@ import django.test
 from .models import Image
 # from .views import NUM_IMAGES_PER_PAGE
 from django.contrib.auth.models import User
+from django.test import Client
 
 # Expected results
 a_expected_params = {'image_id': '84077', 'size': '877x620', 'type': 'M', 'power': '6','func': '424',
@@ -65,12 +66,34 @@ class TestImageFunctions(django.test.TestCase):
         self.assertEqual(self.img_a.num_likes(), num_users - 3)
         
 
-class TestIndexView(django.test.TestCase):
+class TestListViews(django.test.TestCase):
+
+    @classmethod
+    def setUpTestData(this):
+        this.users = [User.objects.create(username=f'user{n}', email=f'user{n}@test.org') for n in range(32)]
+        this.fred = User.objects.create_user('fred', None, 'tested123')
+        this.images = [Image.objects.create(
+            name=f'xtsJ16f32GM{n}-pre70-438x310x-0.1y0.1_420.png',
+            size='438x310') for n in range(32)]
 
     def test_index_view(self):
         response = self.client.get('/')
-        # Test Http status code is 200
+        # Test Http status code is 200 OK
         self.assertEqual(response.status_code, 200)
         # Test queryset has fract.views.NUM_IMAGES_PER_PAGE items
         self.assertNumQueries(NUM_IMAGES_PER_PAGE)
+
+    def test_likes_view(self):
+        self.client.login(username='fred', password='tested123')
+        response = self.client.get('/likes/')
+        # self.assertNumQueries(10000)
+
+        for img in self.images:
+            self.fred.profile.liked_images.add(img)
+
+        print(f'*************************** {self.fred.profile.liked_images.all().count()}')
+        response = self.client.get('/likes/')
+        # Test Http status code is 200 OK
+        self.assertEqual(response.status_code, 200)
+        # self.assertNumQueries(4002)
 
