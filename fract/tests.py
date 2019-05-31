@@ -30,18 +30,18 @@ class TestImageFunctions(django.test.TestCase):
         this.users = [User.objects.create(username=f'user{n}', email=f'user{n}@test.org') for n in range(32)]
 
     def test_params(self):
-        self.assertEqual(self.img_a.params(), a_expected_params)
-        self.assertEqual(self.img_b.params(), b_expected_params)        
+        self.assertEqual(self.img_a.params(), a_expected_params, msg="*** Got wrong params for image a! ***")
+        self.assertEqual(self.img_b.params(), b_expected_params, msg="*** Got wrong params for image b! ***")        
 
     def test_name_large(self):
-        self.assertEqual(self.img_a.name_large(), self.img_a.name)
-        self.assertEqual(self.img_b.name_large(), b_expected_name_large)
+        self.assertEqual(self.img_a.name_large(), self.img_a.name, msg="*** Got wrong name_large for image a! ***")
+        self.assertEqual(self.img_b.name_large(), b_expected_name_large, msg="*** Got wrong name_large for image b! ***")
         
     def test_num_likes(self):
         
         # New images should have no likes
-        self.assertEqual(self.img_a.num_likes(), 0)
-        self.assertEqual(self.img_b.num_likes(), 0)
+        self.assertEqual(self.img_a.num_likes(), 0, msg="*** Got non-zero num_likes for image a! ***")
+        self.assertEqual(self.img_b.num_likes(), 0, msg="*** Got non-zero num_likes for image b! ***")
         
         # Let all users like img_a and let just every third one like img_b
         for user in self.users:
@@ -66,34 +66,44 @@ class TestImageFunctions(django.test.TestCase):
         self.assertEqual(self.img_a.num_likes(), num_users - 3)
         
 
-class TestListViews(django.test.TestCase):
+class TestListViews(django.test.TransactionTestCase):
 
     @classmethod
     def setUpTestData(this):
-        this.users = [User.objects.create(username=f'user{n}', email=f'user{n}@test.org') for n in range(32)]
-        this.fred = User.objects.create_user('fred', None, 'tested123')
+        # this.users = [User.objects.create(username=f'user{n}', email=f'user{n}@test.org') for n in range(10)]
         this.images = [Image.objects.create(
             name=f'xtsJ16f32GM{n}-pre70-438x310x-0.1y0.1_420.png',
-            size='438x310') for n in range(32)]
+            size='438x310') for n in range(10)]
 
     def test_index_view(self):
         response = self.client.get('/')
         # Test Http status code is 200 OK
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 200, msg="*** Didn't get 200 OK from home page! ***")
         # Test queryset has fract.views.NUM_IMAGES_PER_PAGE items
-        self.assertNumQueries(NUM_IMAGES_PER_PAGE)
+        self.assertNumQueries(NUM_IMAGES_PER_PAGE, msg="*** Wrong number of images on the page! ***")
 
     def test_likes_view(self):
-        self.client.login(username='fred', password='tested123')
-        response = self.client.get('/likes/')
-        # self.assertNumQueries(10000)
-
-        for img in self.images:
-            self.fred.profile.liked_images.add(img)
-
-        print(f'*************************** {self.fred.profile.liked_images.all().count()}')
+        user = User.objects.create_user('uuu', None, 'tested123')
+        user.save()
+        self.client.login(username='uuu', password='tested123')
+        self.assertTrue(user.is_authenticated, f'*** User {user} is not authenticated! ***')
         response = self.client.get('/likes/')
         # Test Http status code is 200 OK
-        self.assertEqual(response.status_code, 200)
-        # self.assertNumQueries(4002)
+        self.assertEqual(response.status_code, 200, msg="*** Didn't get 200 OK from likes page! ***")
+        # # Queryset should be empty as uuu currently likes no images
+        # assertQuerysetEqual(response.context('image_list'), [], 
+        #     msg="*** Didn't get empty set when no images liked! ***")
+        # self.client.logout()
+
+        # self.client.login(username='uuu', password='tested123')
+        # response = self.client.get('/likes/')
+        # user = response.context['user']
+        # self.assertTrue(user.is_authenticated, f'*** User {user} is not authenticated! ***')
+        # # Now make user like 10 images
+        # for img in self.images:
+        #     user.profile.liked_images.add(img)
+        # print(f'***************uuu likes {self.uuu.profile.liked_images.all().count()} images.')
+        # response = self.client.get('/likes/')
+        # # Test if they show up correctly
+        # self.assertQuerysetEqual(response.context('image_list'), images, msg="*** Liked images don't match! ***")
 
