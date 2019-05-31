@@ -251,7 +251,7 @@ In order not to distract or detract from the images themselves, the layout and d
     - Check that filtering works by confirming in the Python shell
     - Change things in the admin panel and try to break stuff (e.g. delete a user and then check profile removed by CASCADE)
 
-### Functionality Manually Tested:
+### Functionality Automatically Tested:
     
     - Image parameters returned correctly for two test images
     - `name_large` returned correctly for both small and large images
@@ -350,7 +350,6 @@ I have tried with both a relative URL - occasionally it worked - and an absolute
  This website is the culmination of over a year of study online.   It is my fifth and final "Milestone Project" for the Code Institute course.   It is built in [Python 3.7][13] on the backend, with [Django 2.2][4]. The frontend templates are built using [the Django template language][17], with [Bootstrap 4][18] and my own [CSS][19]</a>.  It is hosted at [Heroku][15]. It uses a [PostgreSQL][9] database also hosted at Heroku to store image data and user profile data.   The images themselves are stored in an [Amazon S3 bucket][6], along with other static files. The project uses [Travis CI][16] for continuous integration and testing.
 
 [0]: https://www.youtube.com/playlist?list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p
-[1]: file://shell.log
 [2]: https://www.caktusgroup.com/blog/2018/10/18/filtering-and-pagination-django/
 [3]: https://docs.djangoproject.com/en/2.2/howto/custom-template-tags/
 [4]: https://www.djangoproject.com/
