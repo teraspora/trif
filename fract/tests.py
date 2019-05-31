@@ -4,6 +4,12 @@ from .models import Image
 from django.contrib.auth.models import User
 from django.test import Client
 
+# Define some images
+# for n in range(10):
+#     img = Image.objects.create(
+#         name=f'xtsJ16f32GM{n}-pre70-438x310x-0.1y0.1_420.png',
+#         size='438x310')
+#     img.save()
 # Expected results
 a_expected_params = {'image_id': '84077', 'size': '877x620', 'type': 'M', 'power': '6','func': '424',
     'alt_func': '359', 'mode': 'C', 'pretrans': '110', 'xparams': ['subc', 'sri'], 'full_flavour': 'Mandelbrot'}
@@ -17,17 +23,17 @@ NUM_IMAGES_PER_PAGE = 18
 class TestImageFunctions(django.test.TestCase):
 
     @classmethod
-    def setUpTestData(this):
+    def setUpTestData(cls):
         # Test Cases
-        this.img_a = Image.objects.create(
+        cls.img_a = Image.objects.create(
             name='xtsM6f424C359-pre110-subc-sri-877x620x3.5741464342585774y3.0788630954174376_84077.png',
             size='877x620')
         
-        this.img_b = Image.objects.create(
+        cls.img_b = Image.objects.create(
             name='xtsJ1f3GM62-pre70-438x310x0.y0._42.png',
             size='438x310')
 
-        this.users = [User.objects.create(username=f'user{n}', email=f'user{n}@test.org') for n in range(32)]
+        cls.users = [User.objects.create(username=f'user{n}', email=f'user{n}@test.org') for n in range(32)]
 
     def test_params(self):
         self.assertEqual(self.img_a.params(), a_expected_params, msg="*** Got wrong params for image a! ***")
@@ -68,12 +74,11 @@ class TestImageFunctions(django.test.TestCase):
 
 class TestListViews(django.test.TransactionTestCase):
 
-    @classmethod
-    def setUpTestData(this):
-        # this.users = [User.objects.create(username=f'user{n}', email=f'user{n}@test.org') for n in range(10)]
-        this.images = [Image.objects.create(
-            name=f'xtsJ16f32GM{n}-pre70-438x310x-0.1y0.1_420.png',
-            size='438x310') for n in range(10)]
+    # @classmethod
+    # def setUpTestData(cls):
+    #     cls.images = [Image.objects.create(
+    #         name=f'xtsJ16f32GM{n}-pre70-438x310x-0.1y0.1_420.png',
+    #         size='438x310') for n in range(10)]
 
     def test_index_view(self):
         response = self.client.get('/')
@@ -95,15 +100,20 @@ class TestListViews(django.test.TransactionTestCase):
             msg="*** Didn't get empty set when no images liked! ***")
         # self.client.logout()
 
-        # self.client.login(username='uuu', password='tested123')
-        # response = self.client.get('/likes/')
         # user = response.context['user']
-        # self.assertTrue(user.is_authenticated, f'*** User {user} is not authenticated! ***')
-        # # Now make user like 10 images
-        # for img in self.images:
-        #     user.profile.liked_images.add(img)
-        # print(f'***************uuu likes {self.uuu.profile.liked_images.all().count()} images.')
-        # response = self.client.get('/likes/')
-        # # Test if they show up correctly
-        # self.assertQuerysetEqual(response.context('image_list'), images, msg="*** Liked images don't match! ***")
+            
+        # Define 10 images and make user like all of them
+        images = []
+        for n in range(10):
+            img = Image.objects.create(
+                name=f'xtsJ16f32GM{n}-pre70-438x310x-0.1y0.1_420.png',
+                size='438x310')
+            images.append(img)
+            user.profile.liked_images.add(img)
+            # img.save()
+                    
+        print(f'\n***************User likes {user.profile.liked_images.all().count()} images. ***************\n')
+        response = self.client.get('/likes/')
+        # Test if they show up correctly
+        self.assertEqual(list(response.context['image_list']), images, msg="*** Liked images don't match! ***")
 
