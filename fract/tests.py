@@ -3,6 +3,7 @@ from .models import Image
 # from .views import NUM_IMAGES_PER_PAGE
 from django.contrib.auth.models import User
 from django.test import Client
+import random as R
 
 # Define some images
 # for n in range(10):
@@ -112,8 +113,31 @@ class TestListViews(django.test.TransactionTestCase):
             user.profile.liked_images.add(img)
             # img.save()
                     
-        print(f'\n***************User likes {user.profile.liked_images.all().count()} images. ***************\n')
+        # print(f'\n***************User likes {user.profile.liked_images.all().count()} images. ***************\n')
         response = self.client.get('/likes/')
         # Test if they show up correctly
         self.assertEqual(list(response.context['image_list']), images, msg="*** Liked images don't match! ***")
 
+    # def test_filtered_view(self):
+    #     # Define 348 images with some random parameters
+    #     num_images = 348
+    #     images = []
+    #     f = R.randint(0, 64)
+    #     g = R.randint(0, 64)
+    #     power = R.randint(0, 12)
+    #     flavour = R.choice(['M', 'M', 'J'])
+    #     for n in range(num_images):
+    #         img = Image.objects.create(
+    #             name=f'xts{flavour}{power}f{f}GM{g}-pre70-438x310x-0.1y0.1_420.png',
+    #             size='438x310')
+    #         images.append(img)
+    #     test_f = images[R.randint(0, num_images)].params()['func']
+    #     test_g = images[R.randint(0, num_images)].params()['alt_func']
+    #     test_p = images[R.randint(0, num_images)].params()['power']
+    #     test_flavour = images[R.randint(0, num_images)].params()['type']
+
+    #     f_filter_expected_size =  len([img for img in images if img.params()['func'] == test_f])            
+    #     print(f'\n\n******** f_filter_expected_size = {f_filter_expected_size}')   
+    #     response = self.client.get(f'/images_filtered/?func={test_f}&alt_func=&exponent=&flavour=*')
+    #     self.assertEqual(len(list(response.context['image_list'])), f_filter_expected_size, 
+    #         msg="*** Filtered image set doesn't match expected result! ***")
